@@ -1,0 +1,62 @@
+name: Monthly report
+
+on:
+  schedule:
+    - cron: "0 8 1 * *"
+  workflow_dispatch:
+    inputs:
+      month:
+        description: "Month YYYY-MM (default previous month)"
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Resolve month
+        id: month
+        run: |
+          if [ -n "${{ github.event.inputs.month }}" ]; then
+            echo "value=${{ github.event.inputs.month }}" >> $GITHUB_OUTPUT
+          else
+            echo "value=$(python -c 'from flatfurious.report.monthly import previous_month; print(previous_month())')" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Sync and generate report
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          SITE_BASE_URL: ${{ vars.SITE_BASE_URL }}
+        run: |
+          python -m flatfurious sync
+          python -m flatfurious report --month ${{ steps.month.outputs.value }} --build-site
+
+      - name: Commit report and site
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ci): monthly report ${{ steps.month.outputs.value }}"
+          file_pattern: |
+            data/*.csv
+            reports/**
+            site/public/**
+
+      - name: Upload WhatsApp artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: whatsapp-${{ steps.month.outputs.value }}
+          path: |
+            reports/${{ steps.month.outputs.value }}/whatsapp.txt
+            reports/${{ steps.month.outputs.value }}/infographic.png

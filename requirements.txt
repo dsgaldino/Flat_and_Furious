@@ -1,0 +1,7 @@
+pandas>=2.0
+requests>=2.28
+python-dotenv>=1.0
+matplotlib>=3.7
+wordcloud>=1.9
+tabulate>=0.9
+Jinja2>=3.1

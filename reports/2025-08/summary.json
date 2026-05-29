@@ -1,0 +1,108 @@
+{
+  "month_year": "2025-08",
+  "month_label_pt": "Agosto/2025",
+  "generated_at": "2026-05-29T07:40:18.845863Z",
+  "distance_month_km": 1668.0,
+  "distance_year_km": 5334.0,
+  "earth_percent_year": 0.1331,
+  "year": 2025,
+  "fastest": {
+    "athlete": "Vinicius Cainelli",
+    "max_speed_kmh": 54.8
+  },
+  "most_moving_time": {
+    "athlete": "Diego Galdino",
+    "duration": "17h18m"
+  },
+  "top3_rides": [
+    {
+      "athlete": "Diego Galdino",
+      "distance_km": 151.7
+    },
+    {
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 150.9
+    },
+    {
+      "athlete": "Thamiris Ramos",
+      "distance_km": 150.8
+    }
+  ],
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Diego Galdino",
+      "distance_km": 353.19
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 347.42
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 329.14
+    },
+    {
+      "rank": 4,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 322.38
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 302.91
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 13.14
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 1545.35
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 1100.66
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 896.98
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 843.54
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 762.6
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 184.99
+    }
+  ],
+  "least_active": {
+    "athlete": "Jonathan Machado",
+    "activities": 1,
+    "total_km": 13.1
+  },
+  "least_weekend": {
+    "athlete": "Jonathan Machado",
+    "weekend_rides": 0
+  },
+  "curiosities": [
+    "Se empilhassemos garrafas de Grolsch com a distancia pedalada em 2025-08, daria pra montar 5055.1 Torres Eiffel.",
+    "Seriam necessarios 2,224,240 passos humanos pra percorrer essa distancia."
+  ]
+}

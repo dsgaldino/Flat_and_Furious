@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flat &amp; Furious — {{ summary.month_label_pt }}</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Flat &amp; Furious</h1>
+    <p>Arquivo — {{ summary.month_label_pt }}</p>
+  </header>
+
+  <nav>
+    <a href="../../">Inicio</a>
+    {% for m in all_months %}
+    <a href="../{{ m }}/">{{ m }}</a>
+    {% endfor %}
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Destaques</h2>
+      <p>Grupo no mes: <strong>{{ "%.0f"|format(summary.distance_month_km) }} km</strong></p>
+      <p>Ano {{ summary.year }}: {{ "%.0f"|format(summary.distance_year_km) }} km ({{ "%.1f"|format(summary.earth_percent_year * 100) }}% volta ao mundo)</p>
+      {% if summary.fastest %}
+      <p>Mais rapido: {{ summary.fastest.athlete }} ({{ summary.fastest.max_speed_kmh }} km/h)</p>
+      {% endif %}
+    </section>
+
+    {% if infographic_src %}
+    <section class="card">
+      <h2>Infografico</h2>
+      <img class="infographic" src="infographic.png" alt="Infografico">
+    </section>
+    {% endif %}
+
+    <section class="card">
+      <h2>Ranking mensal</h2>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Atleta</th><th>km</th></tr>
+        </thead>
+        <tbody>
+          {% for r in summary.ranking_month %}
+          <tr>
+            <td>{{ r.rank }}</td>
+            <td>{{ r.athlete }}</td>
+            <td>{{ "%.1f"|format(r.distance_km) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Resumo para WhatsApp</h2>
+      <div class="whatsapp-box" id="whatsapp-text">{{ whatsapp_text }}</div>
+      <button class="copy-btn" type="button" onclick="copyWhatsApp()">Copiar texto</button>
+    </section>
+  </main>
+
+  <footer>Flat &amp; Furious</footer>
+  <script>
+    function copyWhatsApp() {
+      const text = document.getElementById('whatsapp-text').innerText;
+      navigator.clipboard.writeText(text).then(function () { alert('Texto copiado!'); });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flat &amp; Furious — Agosto/2025</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <header>
+    <h1>Flat &amp; Furious</h1>
+    <p>Arquivo — Agosto/2025</p>
+  </header>
+
+  <nav>
+    <a href="../../">Inicio</a>
+    
+    <a href="../2025-08/">2025-08</a>
+    
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Destaques</h2>
+      <p>Grupo no mes: <strong>1668 km</strong></p>
+      <p>Ano 2025: 5334 km (13.3% volta ao mundo)</p>
+      
+      <p>Mais rapido: Vinicius Cainelli (54.8 km/h)</p>
+      
+    </section>
+
+    
+    <section class="card">
+      <h2>Infografico</h2>
+      <img class="infographic" src="infographic.png" alt="Infografico">
+    </section>
+    
+
+    <section class="card">
+      <h2>Ranking mensal</h2>
+      <table>
+        <thead>
+          <tr><th>#</th><th>Atleta</th><th>km</th></tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>1</td>
+            <td>Diego Galdino</td>
+            <td>353.2</td>
+          </tr>
+          
+          <tr>
+            <td>2</td>
+            <td>Rodrigo Bonilha</td>
+            <td>347.4</td>
+          </tr>
+          
+          <tr>
+            <td>3</td>
+            <td>Jair de Souza Junior</td>
+            <td>329.1</td>
+          </tr>
+          
+          <tr>
+            <td>4</td>
+            <td>Thamiris Ramos</td>
+            <td>322.4</td>
+          </tr>
+          
+          <tr>
+            <td>5</td>
+            <td>Vinicius Cainelli</td>
+            <td>302.9</td>
+          </tr>
+          
+          <tr>
+            <td>6</td>
+            <td>Jonathan Machado</td>
+            <td>13.1</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Resumo para WhatsApp</h2>
+      <div class="whatsapp-box" id="whatsapp-text">Flat &amp; Furious — Agosto/2025
+
+Distancia total do grupo: 1668 km
+Acumulado em 2025: 5334 km (13.3% de uma volta ao mundo)
+Rei/Rainha da distancia: Diego Galdino (353 km)
+Mais rapido: Vinicius Cainelli (54.8 km/h)
+Mais tempo pedalando: Diego Galdino (17h18m)
+
+Top 3 pedaladas:
+1. Diego Galdino — 151.7 km
+2. Vinicius Cainelli — 150.9 km
+3. Thamiris Ramos — 150.8 km
+
+Curiosidades:
+• Se empilhassemos garrafas de Grolsch com a distancia pedalada em 2025-08, daria pra montar 5055.1 Torres Eiffel.
+• Seriam necessarios 2,224,240 passos humanos pra percorrer essa distancia.</div>
+      <button class="copy-btn" type="button" onclick="copyWhatsApp()">Copiar texto</button>
+    </section>
+  </main>
+
+  <footer>Flat &amp; Furious</footer>
+  <script>
+    function copyWhatsApp() {
+      const text = document.getElementById('whatsapp-text').innerText;
+      navigator.clipboard.writeText(text).then(function () { alert('Texto copiado!'); });
+    }
+  </script>
+</body>
+</html>

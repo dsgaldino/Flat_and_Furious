@@ -1,0 +1,38 @@
+name: Register Strava athlete
+
+on:
+  workflow_dispatch:
+    inputs:
+      auth_code:
+        description: "Strava OAuth code or full redirect URL from athlete"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  auth:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Register athlete token
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        run: python -m flatfurious auth --code "${{ github.event.inputs.auth_code }}"
+
+      - name: Commit tokens
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ci): register Strava athlete token"
+          file_pattern: data/tokens_athletes.csv

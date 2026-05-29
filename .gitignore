@@ -1,0 +1,32 @@
+# Environment and secrets
+.env
+Notebooks/.env
+*.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Local env at repo root (copy from .env.example)
+.env
+
+# Local outputs (reports and site/public are committed by CI)
+# Uncomment if you prefer not to track generated files locally:
+# reports/
+# site/public/
