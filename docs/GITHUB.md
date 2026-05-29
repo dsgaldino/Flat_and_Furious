@@ -61,12 +61,20 @@ O workflow `deploy_pages.yml` publica `site/public/` apos cada relatorio mensal.
 | Sync manual | Actions → Daily Strava sync → Run workflow |
 | Relatorio manual | Actions → Monthly report → Run workflow (campo month opcional) |
 
-## Remote ja configurado?
+## Remote ja configurado localmente
 
-Este repositorio deve ter:
+O Git local ja foi inicializado com:
 
 ```text
-origin  https://github.com/SEU_USUARIO/Flat_and_Furious.git
+origin  https://github.com/dsgal/Flat_and_Furious.git
 ```
+
+Se seu usuario GitHub for outro, ajuste:
+
+```powershell
+git remote set-url origin https://github.com/SEU_USUARIO/Flat_and_Furious.git
+```
+
+**Importante:** crie o repositorio vazio no GitHub antes do primeiro `git push`. Se aparecer `Repository not found`, o repo ainda nao existe ou o nome/usuario esta errado.
 
 Verifique com: `git remote -v`

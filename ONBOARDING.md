@@ -5,8 +5,10 @@
 Envie a cada membro (substitua `CLIENT_ID` e `REDIRECT_URI` pelos do seu app):
 
 ```
-https://www.strava.com/oauth/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=REDIRECT_URI&approval_prompt=force&scope=activity:read_all,profile:read_all
+https://www.strava.com/oauth/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http://auth.flatandfurious/&approval_prompt=force&scope=activity:read_all,profile:read_all
 ```
+
+O `redirect_uri` deve ser **exatamente** `http://auth.flatandfurious/` (como no app Strava).
 
 O atleta autoriza e recebe uma URL de redirecionamento contendo `code=...`.
 
@@ -15,8 +17,16 @@ O atleta autoriza e recebe uma URL de redirecionamento contendo `code=...`.
 ### Opcao A — Local
 
 ```bash
-python -m flatfurious auth --code "https://redirect_uri/?code=XXXX&scope=..."
+python -m flatfurious auth --code "http://auth.flatandfurious/?code=XXXX&scope=..."
 ```
+
+Ou registre varios de uma vez (arquivo com uma URL por linha):
+
+```bash
+python scripts/register_from_file.py data/pending_auth_urls.txt
+```
+
+**Atencao:** cada `code` so funciona **uma vez** e expira em poucos minutos. Se falhar, peca ao membro para autorizar de novo.
 
 ### Opcao B — GitHub Actions
 
