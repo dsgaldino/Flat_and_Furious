@@ -3,31 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Autoriza&ccedil;&atilde;o — Flat &amp; Furious</title>
-  <link rel="stylesheet" href="../assets/style.css">
+  <title>Autorizado — Flat &amp; Furious</title>
   <link rel="stylesheet" href="../assets/join.css">
 </head>
 <body class="join-page">
   <header>
+    <img class="brand-logo" src="../assets/logo.png" alt="" width="80" height="80">
     <h1>Flat &amp; Furious</h1>
-    <p>Conex&atilde;o Strava</p>
+    <p class="tagline">Strava conectado</p>
   </header>
 
   <main>
     <section id="state-success" class="card cta-card hidden">
       <div class="success-icon" aria-hidden="true">&#10003;</div>
-      <h2>Obrigado!</h2>
-      <p>
-        Sua autoriza&ccedil;&atilde;o foi recebida. Falta um &uacute;ltimo passo:
-        avise o administrador do grupo para registrar seu acesso.
-      </p>
-      <div class="btn-row">
-        <button type="button" class="copy-btn" id="btn-copy">Copiar link de confirma&ccedil;&atilde;o</button>
-        <a id="btn-whatsapp" class="btn-secondary" href="#" target="_blank" rel="noopener">
-          Enviar no WhatsApp
+      <h2>Bem-vindo ao pelot&atilde;o!</h2>
+      <p id="success-lead">Sua autoriza&ccedil;&atilde;o foi enviada ao administrador.</p>
+      <p id="status-auto" class="status-auto hidden"></p>
+      <div class="btn-row" id="manual-actions">
+        <button type="button" class="copy-btn" id="btn-copy">Copiar link</button>
+        <a id="btn-telegram" class="btn-telegram hidden" href="#" target="_blank" rel="noopener">
+          Enviar no Telegram
         </a>
       </div>
-      <p class="hint">O administrador usa este link uma vez para ativar sua conta no sistema.</p>
+      <p class="hint" id="hint-text">Pode fechar esta p&aacute;gina.</p>
       <details class="code-details">
         <summary>Detalhes t&eacute;cnicos</summary>
         <pre class="code-box" id="code-display"></pre>
@@ -36,19 +34,19 @@
 
     <section id="state-denied" class="card cta-card hidden">
       <h2>Autoriza&ccedil;&atilde;o cancelada</h2>
-      <p>Voc&ecirc; n&atilde;o autorizou o acesso. Se mudou de ideia, volte e tente de novo.</p>
+      <p>Sem problema. Se quiser entrar no ranking, volte e autorize o Strava.</p>
       <a class="btn-strava" href="../join.html">Voltar</a>
     </section>
 
     <section id="state-error" class="card cta-card hidden">
       <h2>Algo deu errado</h2>
-      <p id="error-message">N&atilde;o encontramos o c&oacute;digo de autoriza&ccedil;&atilde;o. O link pode ter expirado.</p>
+      <p id="error-message">Link inv&aacute;lido ou expirado.</p>
       <a class="btn-strava" href="../join.html">Tentar novamente</a>
     </section>
   </main>
 
   <footer>
-    <a href="../join.html">Voltar &agrave;s diretrizes</a>
+    <a href="../join.html">Diretrizes do grupo</a>
   </footer>
 
   <script src="../assets/join.js"></script>
@@ -57,7 +55,6 @@
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
       const error = params.get("error");
-      const scope = params.get("scope") || "";
 
       function show(id) {
         ["state-success", "state-denied", "state-error"].forEach((s) => {
@@ -72,18 +69,49 @@
 
       if (!code) {
         document.getElementById("error-message").textContent =
-          "Não encontramos o código de autorização. Autorize de novo pelo link do grupo.";
+          "Codigo nao encontrado. Autorize de novo pelo link do grupo.";
         show("state-error");
         return;
       }
 
-      const confirmUrl = window.location.origin + window.location.pathname + "?" + params.toString();
-      const waText =
-        "Olá! Autorizei o Flat & Furious no Strava. Segue o link de confirmação:\n\n" +
-        confirmUrl;
-
+      const confirmUrl =
+        window.location.origin + window.location.pathname + "?" + params.toString();
       document.getElementById("code-display").textContent = confirmUrl;
-      document.getElementById("btn-whatsapp").href = whatsAppShareUrl(waText);
+
+      const statusEl = document.getElementById("status-auto");
+      const leadEl = document.getElementById("success-lead");
+      const manualRow = document.getElementById("manual-actions");
+      const hintEl = document.getElementById("hint-text");
+      const tgBtn = document.getElementById("btn-telegram");
+
+      notifyAdminTelegram(confirmUrl, code).then((result) => {
+        statusEl.classList.remove("hidden", "ok", "pending", "err");
+        if (result.auto && result.ok) {
+          statusEl.classList.add("ok");
+          statusEl.textContent =
+            "O administrador foi notificado no Telegram. Pode fechar esta pagina.";
+          leadEl.textContent = "Tudo certo! Voce ja faz parte do fluxo do grupo.";
+          manualRow.classList.add("hidden");
+          hintEl.textContent = "";
+        } else if (result.auto && !result.ok) {
+          statusEl.classList.add("err");
+          statusEl.textContent =
+            "Nao foi possivel notificar o Telegram automaticamente. Use os botoes abaixo.";
+          setupManual();
+        } else {
+          statusEl.classList.add("pending");
+          statusEl.textContent =
+            "Envie o link ao administrador (Telegram) ou aguarde configuracao automatica.";
+          setupManual();
+        }
+      });
+
+      function setupManual() {
+        const shareText =
+          "Flat & Furious — autorizei no Strava:\n\n" + confirmUrl;
+        tgBtn.href = telegramShareUrl(confirmUrl);
+        tgBtn.classList.remove("hidden");
+      }
 
       document.getElementById("btn-copy").addEventListener("click", async () => {
         try {

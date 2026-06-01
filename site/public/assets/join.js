@@ -1,9 +1,13 @@
-/** Shared config for Strava onboarding pages (GitHub Pages). */
+/** Shared config for Strava onboarding (GitHub Pages). */
 const FLAT_FURIOUS_JOIN = {
   CLIENT_ID: "160663",
   SCOPE: "read,activity:read_all,profile:read_all",
-  /** Optional: country code + number, no + or spaces (e.g. 31612345678). Empty = pick contact in WhatsApp. */
-  ADMIN_WHATSAPP: "",
+  /**
+   * Cloudflare Worker URL after deploy (see docs/TELEGRAM_ONBOARDING.md).
+   * Example: "https://flat-furious-notify.SEU_SUBDOMINIO.workers.dev"
+   * Leave empty to only show copy / manual Telegram share.
+   */
+  TELEGRAM_NOTIFY_WEBHOOK: "",
 };
 
 function repoBasePath() {
@@ -31,11 +35,33 @@ function stravaAuthorizeUrl() {
   return `https://www.strava.com/oauth/authorize?${params.toString()}`;
 }
 
-function whatsAppShareUrl(text) {
-  const encoded = encodeURIComponent(text);
-  const phone = FLAT_FURIOUS_JOIN.ADMIN_WHATSAPP;
-  if (phone) {
-    return `https://wa.me/${phone}?text=${encoded}`;
+/** Fallback: open Telegram with pre-filled message (semi-auto). */
+function telegramShareUrl(text) {
+  return `https://t.me/share/url?url=${encodeURIComponent(text)}`;
+}
+
+/**
+ * Notify admin via Cloudflare Worker (token stays on server).
+ * @returns {Promise<{ok: boolean, auto: boolean, message?: string}>}
+ */
+async function notifyAdminTelegram(confirmUrl, code) {
+  const webhook = (FLAT_FURIOUS_JOIN.TELEGRAM_NOTIFY_WEBHOOK || "").trim();
+  if (!webhook) {
+    return { ok: false, auto: false };
   }
-  return `https://wa.me/?text=${encoded}`;
+
+  try {
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ confirm_url: confirmUrl, code }),
+    });
+    if (res.ok) {
+      return { ok: true, auto: true };
+    }
+    const err = await res.text();
+    return { ok: false, auto: true, message: err };
+  } catch (e) {
+    return { ok: false, auto: true, message: String(e) };
+  }
 }
