@@ -1,0 +1,12 @@
+{
+  "name": "flat-furious-notify",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.14.0"
+  }
+}

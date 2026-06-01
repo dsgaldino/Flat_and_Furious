@@ -19,18 +19,29 @@ Quando um amigo autoriza o Strava, voce recebe uma mensagem no Telegram com o li
 
 ## 3. Deploy do Worker (gratis — Cloudflare)
 
-1. Conta em https://dash.cloudflare.com
-2. Instale Wrangler: `npm install -g wrangler` e `wrangler login`
-3. Na pasta `workers/` do projeto:
+1. Conta em https://dash.cloudflare.com (gratis)
+2. **Windows (recomendado)** — na raiz do repo:
 
-```bash
-cd workers
-wrangler secret put TELEGRAM_BOT_TOKEN
-wrangler secret put TELEGRAM_CHAT_ID
-wrangler deploy
+```powershell
+.\scripts\telegram-worker-setup.ps1
 ```
 
-4. Anote a URL: `https://flat-furious-notify.SEU_SUBDOMINIO.workers.dev`
+O script instala o Wrangler localmente, abre login no browser, pede os secrets e faz deploy.
+
+3. **Manual** — na pasta `workers/`:
+
+```powershell
+cd workers
+npm install
+npx wrangler login
+npx wrangler secret put TELEGRAM_BOT_TOKEN
+npx wrangler secret put TELEGRAM_CHAT_ID
+npx wrangler deploy
+```
+
+4. Anote a URL exibida no deploy, ex.: `https://flat-furious-notify.SEU_SUBDOMINIO.workers.dev`
+
+5. **Health check:** abra essa URL no browser. Deve aparecer JSON com `"telegram_configured": true`.
 
 ## 4. Ativar no site
 

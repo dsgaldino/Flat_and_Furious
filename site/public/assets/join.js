@@ -7,7 +7,7 @@ const FLAT_FURIOUS_JOIN = {
    * Example: "https://flat-furious-notify.SEU_SUBDOMINIO.workers.dev"
    * Leave empty to only show copy / manual Telegram share.
    */
-  TELEGRAM_NOTIFY_WEBHOOK: "",
+  TELEGRAM_NOTIFY_WEBHOOK: "https://flat-furious-notify.dsgaldino.workers.dev",
 };
 
 function repoBasePath() {

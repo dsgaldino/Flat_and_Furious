@@ -23,8 +23,9 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Local env at repo root (copy from .env.example)
-.env
+# Cloudflare Worker (local)
+workers/node_modules/
+workers/.wrangler/
 
 # Local outputs (reports and site/public are committed by CI)
 # Uncomment if you prefer not to track generated files locally:

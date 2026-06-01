@@ -7,12 +7,28 @@
  * POST JSON: { "confirm_url": "...", "code": "..." }
  */
 
+const ALLOWED_ORIGINS = new Set([
+  "https://dsgaldino.github.io",
+]);
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
-      return new Response(null, {
-        headers: corsHeaders(request),
-      });
+      return new Response(null, { headers: corsHeaders(request) });
+    }
+
+    if (request.method === "GET") {
+      const token = env.TELEGRAM_BOT_TOKEN;
+      const chatId = env.TELEGRAM_CHAT_ID;
+      return json(
+        {
+          ok: true,
+          service: "flat-furious-notify",
+          telegram_configured: Boolean(token && chatId),
+        },
+        200,
+        request,
+      );
     }
 
     if (request.method !== "POST") {
@@ -64,10 +80,11 @@ export default {
 };
 
 function corsHeaders(request) {
-  const origin = request.headers.get("Origin") || "*";
+  const origin = request.headers.get("Origin") || "";
+  const allowOrigin = ALLOWED_ORIGINS.has(origin) ? origin : ALLOWED_ORIGINS.values().next().value;
   return {
-    "Access-Control-Allow-Origin": origin,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Origin": allowOrigin,
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
   };
 }
