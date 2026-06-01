@@ -1,51 +1,91 @@
 # Onboarding de atletas — Flat & Furious
 
-## Link de autorizacao Strava
+## Para o administrador (uma vez)
 
-Envie a cada membro (substitua `CLIENT_ID` e `REDIRECT_URI` pelos do seu app):
+1. No [Strava API](https://www.strava.com/settings/api), app **Flat and Furious**:
+   - **Authorization Callback Domain:** `dsgaldino.github.io`
+   - (Antigo `auth.flatandfurious` não use mais.)
+2. No `.env` do repo:
+   ```env
+   STRAVA_REDIRECT_URI=https://dsgaldino.github.io/Flat_and_Furious/strava/callback.html
+   ```
+3. Faça deploy do site (`site/public`) no GitHub Pages (push ou workflow).
+4. (Opcional) Em `site/public/assets/join.js`, defina `ADMIN_WHATSAPP` com seu número (ex. `31612345678`) para o botão WhatsApp ir direto para você.
+
+---
+
+## Link para enviar aos amigos
+
+**Página de boas-vindas (recomendado):**
 
 ```
-https://www.strava.com/oauth/authorize?client_id=CLIENT_ID&response_type=code&redirect_uri=http://auth.flatandfurious/&approval_prompt=force&scope=activity:read_all,profile:read_all
+https://dsgaldino.github.io/Flat_and_Furious/join.html
 ```
 
-O `redirect_uri` deve ser **exatamente** `http://auth.flatandfurious/` (como no app Strava).
+Eles leem as diretrizes, clicam em **Autorizar no Strava** e, ao final, veem uma página de **obrigado** (sem erro no navegador).
 
-O atleta autoriza e recebe uma URL de redirecionamento contendo `code=...`.
+---
 
-## Registrar o token
+## O que o amigo faz
 
-### Opcao A — Local
+1. Abre `join.html` no celular ou PC.
+2. Lê as diretrizes do grupo.
+3. Clica em **Autorizar no Strava** e confirma no Strava.
+4. Na página de sucesso:
+   - Clica em **Enviar no WhatsApp** (mensagem já vem com o link), **ou**
+   - **Copiar link de confirmação** e te manda.
+
+O `code` expira em poucos minutos — peça para enviar logo.
+
+---
+
+## O que você faz (por amigo)
+
+Cole a URL que ele enviou (a página de callback completa):
 
 ```bash
-python -m flatfurious auth --code "http://auth.flatandfurious/?code=XXXX&scope=..."
+python -m flatfurious auth --code "https://dsgaldino.github.io/Flat_and_Furious/strava/callback.html?code=..."
 ```
 
-Ou registre varios de uma vez (arquivo com uma URL por linha):
+Ou vários de uma vez:
 
 ```bash
 python scripts/register_from_file.py data/pending_auth_urls.txt
 ```
 
-**Atencao:** cada `code` so funciona **uma vez** e expira em poucos minutos. Se falhar, peca ao membro para autorizar de novo.
+Depois:
 
-### Opcao B — GitHub Actions
+```bash
+python -m flatfurious sync --full
+```
 
-1. Repositorio **privado** com secrets `CLIENT_ID` e `CLIENT_SECRET` configurados.
-2. Actions > **Register Strava athlete** > Run workflow.
-3. Cole o `auth_code` (code ou URL completa).
+Confira `data/members.csv` (nome igual ao Strava + `group_join_date`).
 
-O workflow atualiza `data/tokens_athletes.csv` automaticamente.
+---
 
-## Apos registrar todos
+## Link Strava direto (alternativa)
 
-1. Rode `python -m flatfurious sync` localmente ou aguarde o workflow **Daily Strava sync**.
-2. No dia 1 do mes, o workflow **Monthly report** gera relatorio, site e `whatsapp.txt`.
+Só se não usar `join.html`:
+
+```
+https://www.strava.com/oauth/authorize?client_id=160663&response_type=code&redirect_uri=https://dsgaldino.github.io/Flat_and_Furious/strava/callback.html&approval_prompt=force&scope=activity:read_all,profile:read_all
+```
+
+O `redirect_uri` tem que ser **idêntico** em: link, `.env`, troca do `code` e app Strava.
+
+---
+
+## GitHub Actions (opcional)
+
+Actions → **Register Strava athlete** → cole o `auth_code` ou URL completa.
+
+---
 
 ## Checklist
 
-- [ ] Repositório GitHub privado
-- [ ] Secrets `CLIENT_ID` e `CLIENT_SECRET`
-- [ ] Variable `SITE_BASE_URL` (opcional)
-- [ ] GitHub Pages habilitado (Source: GitHub Actions)
-- [ ] Todos os membros registrados via `auth`
-- [ ] Primeiro `sync` concluido com sucesso
+- [ ] Callback domain no Strava: `dsgaldino.github.io`
+- [ ] `STRAVA_REDIRECT_URI` no `.env` e GitHub Secrets
+- [ ] `join.html` no ar (GitHub Pages)
+- [ ] Membros em `data/members.csv`
+- [ ] Tokens em `data/tokens_athletes.csv` via `auth`
+- [ ] `python -m flatfurious sync --full` OK

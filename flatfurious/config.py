@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import os
+from datetime import datetime
 from pathlib import Path
 
 from dotenv import load_dotenv
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(_REPO_ROOT / ".env")
-load_dotenv(_REPO_ROOT / "Notebooks" / ".env")
+# Repo-root .env wins over stale shell/Notebooks env (override=True).
+load_dotenv(_REPO_ROOT / ".env", override=True)
 
 
 def repo_root() -> Path:
@@ -69,4 +70,12 @@ def site_base_url() -> str:
 
 
 def strava_redirect_uri() -> str:
-    return os.getenv("STRAVA_REDIRECT_URI", "http://auth.flatandfurious/")
+    return os.getenv(
+        "STRAVA_REDIRECT_URI",
+        "https://dsgaldino.github.io/Flat_and_Furious/strava/callback.html",
+    )
+
+
+def group_start_date() -> datetime:
+    raw = os.getenv("GROUP_START_DATE", "2022-08-01")
+    return datetime.strptime(raw, "%Y-%m-%d")

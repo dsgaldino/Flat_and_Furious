@@ -1,0 +1,85 @@
+.join-page main {
+  max-width: 640px;
+}
+
+.hero-card p {
+  font-size: 1.05rem;
+}
+
+.guidelines {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.guidelines li {
+  margin-bottom: 0.65rem;
+}
+
+.cta-card {
+  text-align: center;
+}
+
+.btn-strava {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  background: #fc4c02;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  font-size: 1.05rem;
+}
+
+.btn-strava:hover {
+  filter: brightness(1.08);
+}
+
+.hint {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.join-page .btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.join-page .btn-secondary {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.join-page .btn-secondary:hover {
+  background: rgba(233, 69, 96, 0.12);
+}
+
+.join-page .success-icon {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.join-page .code-box {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  word-break: break-all;
+  font-size: 0.8rem;
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.join-page .hidden {
+  display: none;
+}
