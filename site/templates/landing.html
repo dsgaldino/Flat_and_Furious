@@ -49,37 +49,39 @@
       </div>
     </section>
 
-    
+    {% if latest_summary %}
     <section class="card">
-      <h2>&Uacute;ltimo relat&oacute;rio &mdash; Agosto/2025</h2>
+      <h2>&Uacute;ltimo relat&oacute;rio &mdash; {{ latest_summary.month_label_pt }}</h2>
       <div class="stat-grid">
         <div class="stat">
-          <div class="value">1668</div>
+          <div class="value">{{ "%.0f"|format(latest_summary.distance_month_km) }}</div>
           <div class="label">km no m&ecirc;s</div>
         </div>
         <div class="stat">
-          <div class="value">5334</div>
-          <div class="label">km em 2025</div>
+          <div class="value">{{ "%.0f"|format(latest_summary.distance_year_km) }}</div>
+          <div class="label">km em {{ latest_summary.year }}</div>
         </div>
         <div class="stat">
-          <div class="value">13.3%</div>
+          <div class="value">{{ "%.1f"|format(latest_summary.earth_percent_year * 100) }}%</div>
           <div class="label">volta ao mundo</div>
         </div>
       </div>
       <div class="btn-row">
-        <a class="btn-primary" href="archive/2025-08/">Ver relat&oacute;rio completo</a>
+        <a class="btn-primary" href="archive/{{ latest_month }}/">Ver relat&oacute;rio completo</a>
       </div>
     </section>
-    
+    {% endif %}
 
     <section class="card cta-card">
       <h2>Quer entrar no pelot&atilde;o?</h2>
       <p>Conecte o Strava e entre nos rankings do grupo.</p>
       <div class="btn-row">
         <a class="btn-primary" href="join.html">Entrar no grupo</a>
-        
-        <a class="btn-secondary" href="archive/2025-08/">Ver relat&oacute;rios</a>
-        
+        {% if latest_month %}
+        <a class="btn-secondary" href="archive/{{ latest_month }}/">Ver relat&oacute;rios</a>
+        {% else %}
+        <a class="btn-secondary" href="archive/">Ver relat&oacute;rios</a>
+        {% endif %}
       </div>
     </section>
   </main>

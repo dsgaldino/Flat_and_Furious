@@ -4,35 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flat &amp; Furious — Agosto/2025</title>
-  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="icon" href="../../assets/logo-primary.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.css">
 </head>
-<body>
-  <header>
-    <h1>Flat &amp; Furious</h1>
-    <p>Arquivo — Agosto/2025</p>
-  </header>
+<body data-active-page="reports">
+  <header id="site-header"></header>
 
-  <nav>
-    <a href="../../">Inicio</a>
-    
-    <a href="../2025-08/">2025-08</a>
-    
-  </nav>
+  <main class="wide">
+    <p class="page-subtitle">Relat&oacute;rio mensal &mdash; Agosto/2025</p>
 
-  <main>
-    <section class="card">
-      <h2>Destaques</h2>
-      <p>Grupo no mes: <strong>1668 km</strong></p>
-      <p>Ano 2025: 5334 km (13.3% volta ao mundo)</p>
+    <nav class="archive-nav" aria-label="Arquivo">
+      <strong>Arquivo:</strong>
       
-      <p>Mais rapido: Vinicius Cainelli (54.8 km/h)</p>
+      <a href="../2025-08/" class="active">2025-08</a>
+      
+    </nav>
+
+    <section class="card">
+      <h2>Destaques do m&ecirc;s</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="value">1668</div>
+          <div class="label">km no m&ecirc;s</div>
+        </div>
+        <div class="stat">
+          <div class="value">5334</div>
+          <div class="label">km em 2025</div>
+        </div>
+        <div class="stat">
+          <div class="value">13.3%</div>
+          <div class="label">volta ao mundo</div>
+        </div>
+      </div>
+      
+      <p>Mais r&aacute;pido: <strong>Vinicius Cainelli</strong> (54.8 km/h)</p>
+      
+      
+      <p>Mais tempo pedalando: <strong>Diego Galdino</strong> (17h18m)</p>
       
     </section>
 
     
     <section class="card">
-      <h2>Infografico</h2>
-      <img class="infographic" src="infographic.png" alt="Infografico">
+      <h2>Infogr&aacute;fico</h2>
+      <img class="infographic" src="infographic.png" alt="Infogr&aacute;fico 2025-08">
     </section>
     
 
@@ -85,6 +100,19 @@
     </section>
 
     <section class="card">
+      <h2>Top 3 pedaladas</h2>
+      <ol>
+        
+        <li>Diego Galdino &mdash; 151.7 km</li>
+        
+        <li>Vinicius Cainelli &mdash; 150.9 km</li>
+        
+        <li>Thamiris Ramos &mdash; 150.8 km</li>
+        
+      </ol>
+    </section>
+
+    <section class="card">
       <h2>Resumo para WhatsApp</h2>
       <div class="whatsapp-box" id="whatsapp-text">Flat &amp; Furious — Agosto/2025
 
@@ -106,12 +134,7 @@ Curiosidades:
     </section>
   </main>
 
-  <footer>Flat &amp; Furious</footer>
-  <script>
-    function copyWhatsApp() {
-      const text = document.getElementById('whatsapp-text').innerText;
-      navigator.clipboard.writeText(text).then(function () { alert('Texto copiado!'); });
-    }
-  </script>
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="../../assets/site.js"></script>
 </body>
 </html>

@@ -4,35 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Flat &amp; Furious — {{ summary.month_label_pt }}</title>
-  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="icon" href="../../assets/logo-primary.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/theme.css">
 </head>
-<body>
-  <header>
-    <h1>Flat &amp; Furious</h1>
-    <p>Arquivo — {{ summary.month_label_pt }}</p>
-  </header>
+<body data-active-page="reports">
+  <header id="site-header"></header>
 
-  <nav>
-    <a href="../../">Inicio</a>
-    {% for m in all_months %}
-    <a href="../{{ m }}/">{{ m }}</a>
-    {% endfor %}
-  </nav>
+  <main class="wide">
+    <p class="page-subtitle">Relat&oacute;rio mensal &mdash; {{ summary.month_label_pt }}</p>
 
-  <main>
+    <nav class="archive-nav" aria-label="Arquivo">
+      <strong>Arquivo:</strong>
+      {% for m in all_months %}
+      <a href="../{{ m }}/"{% if m == summary.month_year %} class="active"{% endif %}>{{ m }}</a>
+      {% endfor %}
+    </nav>
+
     <section class="card">
-      <h2>Destaques</h2>
-      <p>Grupo no mes: <strong>{{ "%.0f"|format(summary.distance_month_km) }} km</strong></p>
-      <p>Ano {{ summary.year }}: {{ "%.0f"|format(summary.distance_year_km) }} km ({{ "%.1f"|format(summary.earth_percent_year * 100) }}% volta ao mundo)</p>
+      <h2>Destaques do m&ecirc;s</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="value">{{ "%.0f"|format(summary.distance_month_km) }}</div>
+          <div class="label">km no m&ecirc;s</div>
+        </div>
+        <div class="stat">
+          <div class="value">{{ "%.0f"|format(summary.distance_year_km) }}</div>
+          <div class="label">km em {{ summary.year }}</div>
+        </div>
+        <div class="stat">
+          <div class="value">{{ "%.1f"|format(summary.earth_percent_year * 100) }}%</div>
+          <div class="label">volta ao mundo</div>
+        </div>
+      </div>
       {% if summary.fastest %}
-      <p>Mais rapido: {{ summary.fastest.athlete }} ({{ summary.fastest.max_speed_kmh }} km/h)</p>
+      <p>Mais r&aacute;pido: <strong>{{ summary.fastest.athlete }}</strong> ({{ summary.fastest.max_speed_kmh }} km/h)</p>
+      {% endif %}
+      {% if summary.most_moving_time %}
+      <p>Mais tempo pedalando: <strong>{{ summary.most_moving_time.athlete }}</strong> ({{ summary.most_moving_time.duration }})</p>
       {% endif %}
     </section>
 
     {% if infographic_src %}
     <section class="card">
-      <h2>Infografico</h2>
-      <img class="infographic" src="infographic.png" alt="Infografico">
+      <h2>Infogr&aacute;fico</h2>
+      <img class="infographic" src="{{ infographic_src }}" alt="Infogr&aacute;fico {{ summary.month_year }}">
     </section>
     {% endif %}
 
@@ -55,18 +70,22 @@
     </section>
 
     <section class="card">
+      <h2>Top 3 pedaladas</h2>
+      <ol>
+        {% for ride in summary.top3_rides %}
+        <li>{{ ride.athlete }} &mdash; {{ ride.distance_km }} km</li>
+        {% endfor %}
+      </ol>
+    </section>
+
+    <section class="card">
       <h2>Resumo para WhatsApp</h2>
       <div class="whatsapp-box" id="whatsapp-text">{{ whatsapp_text }}</div>
       <button class="copy-btn" type="button" onclick="copyWhatsApp()">Copiar texto</button>
     </section>
   </main>
 
-  <footer>Flat &amp; Furious</footer>
-  <script>
-    function copyWhatsApp() {
-      const text = document.getElementById('whatsapp-text').innerText;
-      navigator.clipboard.writeText(text).then(function () { alert('Texto copiado!'); });
-    }
-  </script>
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="../../assets/site.js"></script>
 </body>
 </html>

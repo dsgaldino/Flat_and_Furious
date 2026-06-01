@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Flat and Furious">
+  <circle cx="60" cy="60" r="56" fill="#1a2d4a" stroke="#c9a24d" stroke-width="2"/>
+  <path d="M30 78 Q60 68 90 78" fill="none" stroke="#4a6a8a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M34 84 Q60 74 86 84" fill="none" stroke="#6b7f9a" stroke-width="2" stroke-linecap="round"/>
+  <path d="M38 90 Q60 82 82 90" fill="none" stroke="#f0ebe3" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <g transform="translate(60,42)">
+    <rect x="-3" y="-22" width="6" height="28" fill="#1a1a1a"/>
+    <path d="M-18 -22 L18 -22 L14 -30 L-14 -30 Z" fill="#1a1a1a"/>
+    <line x1="0" y1="-22" x2="0" y2="-38" stroke="#1a1a1a" stroke-width="2.5"/>
+    <g stroke="#1a1a1a" stroke-width="2" fill="none">
+      <line x1="0" y1="-38" x2="-16" y2="-28"/>
+      <line x1="0" y1="-38" x2="16" y2="-28"/>
+      <line x1="0" y1="-38" x2="0" y2="-24"/>
+      <line x1="0" y1="-38" x2="-12" y2="-34"/>
+      <line x1="0" y1="-38" x2="12" y2="-34"/>
+    </g>
+    <text x="0" y="14" text-anchor="middle" fill="#c9a24d" font-family="Georgia,serif" font-size="14" font-style="italic" font-weight="bold">FF</text>
+  </g>
+</svg>

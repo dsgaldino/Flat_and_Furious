@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relat&oacute;rios — Flat &amp; Furious</title>
+  <link rel="icon" href="../assets/logo-primary.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body data-active-page="reports">
+  <header id="site-header"></header>
+
+  <main>
+    <h1 class="hero-title" style="text-align:center;font-size:1.35rem;">Relat&oacute;rios mensais</h1>
+    <p class="lead muted" style="text-align:center;">Rankings e destaques do pelot&atilde;o</p>
+
+    <section class="card">
+      <h2>Arquivo</h2>
+      <ul>
+        {% for m in all_months|reverse %}
+        <li><a href="{{ m }}/">{{ m }}</a>{% if m == latest_month %} &mdash; mais recente{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </section>
+
+    {% if latest_summary %}
+    <section class="card">
+      <h2>&Uacute;ltimo &mdash; {{ latest_summary.month_label_pt }}</h2>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="value">{{ "%.0f"|format(latest_summary.distance_month_km) }}</div>
+          <div class="label">km no m&ecirc;s</div>
+        </div>
+        <div class="stat">
+          <div class="value">{{ "%.0f"|format(latest_summary.distance_year_km) }}</div>
+          <div class="label">km em {{ latest_summary.year }}</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <a class="btn-primary" href="{{ latest_month }}/">Abrir relat&oacute;rio</a>
+      </div>
+    </section>
+    {% endif %}
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

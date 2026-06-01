@@ -9,7 +9,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from flatfurious.config import reports_dir, site_base_url, site_public_dir, site_templates_dir
-from flatfurious.report.monthly import build_summary, previous_month
+from flatfurious.report.monthly import build_summary
 
 
 def _list_report_months() -> list[str]:
@@ -21,6 +21,21 @@ def _list_report_months() -> list[str]:
         if p.is_dir() and (p / "summary.json").exists():
             months.append(p.name)
     return months
+
+
+def _sync_template_assets(templates: Path, public: Path) -> None:
+    """Copy template assets into public/assets without deleting extra files."""
+    assets_src = templates / "assets"
+    assets_dst = public / "assets"
+    assets_dst.mkdir(parents=True, exist_ok=True)
+    if not assets_src.exists():
+        return
+    for src in assets_src.rglob("*"):
+        if src.is_file():
+            rel = src.relative_to(assets_src)
+            dst = assets_dst / rel
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst)
 
 
 def build_site(latest_month: str | None = None) -> Path:
@@ -42,19 +57,20 @@ def build_site(latest_month: str | None = None) -> Path:
         save_summary(latest_month, summary)
         months = [latest_month]
 
+    _sync_template_assets(templates, public)
+
     if not months:
         print("No reports found. Run: python -m flatfurious report --month YYYY-MM")
+        landing_tpl = env.get_template("landing.html")
+        (public / "index.html").write_text(
+            landing_tpl.render(latest_summary=None, latest_month=None),
+            encoding="utf-8",
+        )
+        print(f"Site built at {public} (landing only, no reports)")
         return public
 
     latest = latest_month or months[-1]
     base_url = site_base_url()
-
-    assets_src = templates / "assets"
-    assets_dst = public / "assets"
-    if assets_src.exists():
-        if assets_dst.exists():
-            shutil.rmtree(assets_dst)
-        shutil.copytree(assets_src, assets_dst)
 
     archive_dir = public / "archive"
     archive_dir.mkdir(parents=True, exist_ok=True)
@@ -77,7 +93,7 @@ def build_site(latest_month: str | None = None) -> Path:
         infographic_src = reports_dir() / month / "infographic.png"
         if infographic_src.exists():
             shutil.copy2(infographic_src, month_dir / "infographic.png")
-            infographic_rel = f"archive/{month}/infographic.png"
+            infographic_rel = "infographic.png"
 
         tpl = env.get_template("archive.html")
         html = tpl.render(
@@ -90,26 +106,28 @@ def build_site(latest_month: str | None = None) -> Path:
         (month_dir / "index.html").write_text(html, encoding="utf-8")
 
     latest_summary = summaries[latest]
-    whatsapp_latest = reports_dir() / latest / "whatsapp.txt"
-    whatsapp_text = (
-        whatsapp_latest.read_text(encoding="utf-8")
-        if whatsapp_latest.exists()
-        else ""
-    )
-    infographic_rel = f"archive/{latest}/infographic.png"
-    if not (public / infographic_rel).exists():
-        infographic_rel = None
 
-    index_tpl = env.get_template("index.html")
-    index_html = index_tpl.render(
-        summary=latest_summary,
-        whatsapp_text=whatsapp_text,
-        infographic_src=infographic_rel,
-        base_url=base_url,
-        all_months=months,
-        latest_month=latest,
+    archive_index_tpl = env.get_template("archive-index.html")
+    (archive_dir / "index.html").write_text(
+        archive_index_tpl.render(
+            all_months=months,
+            latest_month=latest,
+            latest_summary=latest_summary,
+            base_url=base_url,
+        ),
+        encoding="utf-8",
     )
-    (public / "index.html").write_text(index_html, encoding="utf-8")
+
+    landing_tpl = env.get_template("landing.html")
+    (public / "index.html").write_text(
+        landing_tpl.render(
+            latest_summary=latest_summary,
+            latest_month=latest,
+            all_months=months,
+            base_url=base_url,
+        ),
+        encoding="utf-8",
+    )
 
     print(f"Site built at {public}")
     return public

@@ -4,18 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Autorizado — Flat &amp; Furious</title>
-  <link rel="stylesheet" href="../assets/join.css">
+  <link rel="icon" href="../assets/logo-primary.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/theme.css">
 </head>
-<body class="join-page">
-  <header>
-    <img class="brand-logo" src="../assets/logo.png" alt="" width="80" height="80">
-    <h1>Flat &amp; Furious</h1>
-    <p class="tagline">Strava conectado</p>
-  </header>
+<body data-active-page="join">
+  <header id="site-header"></header>
 
   <main>
     <section id="state-success" class="card cta-card hidden">
       <div class="success-icon" aria-hidden="true">&#10003;</div>
+      <img src="../assets/icon-gelato.svg" alt="" width="32" height="32" style="margin:0.5rem auto;display:block;">
       <h2>Bem-vindo ao pelot&atilde;o!</h2>
       <p id="success-lead">Sua autoriza&ccedil;&atilde;o foi enviada ao administrador.</p>
       <p id="status-auto" class="status-auto hidden"></p>
@@ -25,17 +23,21 @@
           Enviar no Telegram
         </a>
       </div>
-      <p class="hint" id="hint-text">Pode fechar esta p&aacute;gina.</p>
-      <details class="code-details">
+      <p class="hint" id="hint-text">Quase no pelot&atilde;o &mdash; depois disso, gelato no Paulinho.</p>
+      <details class="code-details" id="debug-details">
         <summary>Detalhes t&eacute;cnicos</summary>
         <pre class="code-box" id="code-display"></pre>
       </details>
+      <div class="btn-row" style="margin-top:1.5rem;">
+        <a class="btn-secondary" href="../index.html">Voltar ao in&iacute;cio</a>
+        <a class="btn-secondary" href="../archive/">Ver relat&oacute;rios</a>
+      </div>
     </section>
 
     <section id="state-denied" class="card cta-card hidden">
       <h2>Autoriza&ccedil;&atilde;o cancelada</h2>
       <p>Sem problema. Se quiser entrar no ranking, volte e autorize o Strava.</p>
-      <a class="btn-strava" href="../join.html">Voltar</a>
+      <a class="btn-strava" href="../join.html">Tentar de novo</a>
     </section>
 
     <section id="state-error" class="card cta-card hidden">
@@ -45,19 +47,21 @@
     </section>
   </main>
 
-  <footer>
-    <a href="../join.html">Diretrizes do grupo</a>
-  </footer>
-
-  <script src="../assets/join.js"></script>
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="../assets/site.js"></script>
   <script>
     (function () {
       const params = new URLSearchParams(window.location.search);
       const code = params.get("code");
       const error = params.get("error");
+      const debug = params.get("debug") === "1";
+
+      if (!debug) {
+        document.getElementById("debug-details").classList.add("hidden");
+      }
 
       function show(id) {
-        ["state-success", "state-denied", "state-error"].forEach((s) => {
+        ["state-success", "state-denied", "state-error"].forEach(function (s) {
           document.getElementById(s).classList.toggle("hidden", s !== id);
         });
       }
@@ -69,7 +73,7 @@
 
       if (!code) {
         document.getElementById("error-message").textContent =
-          "Codigo nao encontrado. Autorize de novo pelo link do grupo.";
+          "C\u00f3digo n\u00e3o encontrado. Autorize de novo pelo link do grupo.";
         show("state-error");
         return;
       }
@@ -84,36 +88,38 @@
       const hintEl = document.getElementById("hint-text");
       const tgBtn = document.getElementById("btn-telegram");
 
-      notifyAdminTelegram(confirmUrl, code).then((result) => {
+      notifyAdminTelegram(confirmUrl, code).then(function (result) {
         statusEl.classList.remove("hidden", "ok", "pending", "err");
         if (result.auto && result.ok) {
           statusEl.classList.add("ok");
           statusEl.textContent =
-            "O administrador foi notificado no Telegram. Pode fechar esta pagina.";
-          leadEl.textContent = "Tudo certo! Voce ja faz parte do fluxo do grupo.";
+            "O administrador foi notificado no Telegram. Pode fechar esta p\u00e1gina.";
+          leadEl.textContent = "Tudo certo! Voc\u00ea j\u00e1 faz parte do fluxo do grupo.";
           manualRow.classList.add("hidden");
-          hintEl.textContent = "";
+          hintEl.textContent = "Quase no pelot\u00e3o \u2014 depois disso, gelato no Paulinho.";
         } else if (result.auto && !result.ok) {
           statusEl.classList.add("err");
           statusEl.textContent =
-            "Nao foi possivel notificar o Telegram automaticamente. Use os botoes abaixo.";
+            "N\u00e3o foi poss\u00edvel notificar o Telegram automaticamente. Use os bot\u00f5es abaixo.";
+          if (result.message) {
+            document.getElementById("code-display").textContent =
+              confirmUrl + "\n\n--- diagnostico Worker ---\n" + result.message;
+          }
           setupManual();
         } else {
           statusEl.classList.add("pending");
           statusEl.textContent =
-            "Envie o link ao administrador (Telegram) ou aguarde configuracao automatica.";
+            "Envie o link ao administrador (Telegram) ou aguarde configura\u00e7\u00e3o autom\u00e1tica.";
           setupManual();
         }
       });
 
       function setupManual() {
-        const shareText =
-          "Flat & Furious — autorizei no Strava:\n\n" + confirmUrl;
         tgBtn.href = telegramShareUrl(confirmUrl);
         tgBtn.classList.remove("hidden");
       }
 
-      document.getElementById("btn-copy").addEventListener("click", async () => {
+      document.getElementById("btn-copy").addEventListener("click", async function () {
         try {
           await navigator.clipboard.writeText(confirmUrl);
           document.getElementById("btn-copy").textContent = "Copiado!";
