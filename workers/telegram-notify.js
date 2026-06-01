@@ -64,9 +64,14 @@ export default {
     const confirmUrl = (body.confirm_url || body.url || "").trim();
     const code = (body.code || "").trim();
 
+    const willAutoRegister = Boolean(
+      env.GITHUB_DISPATCH_TOKEN && confirmUrl,
+    );
+
+    // OAuth code is single-use: if GitHub will exchange it, do not exchange here.
     let athleteName = null;
     let exchangeError = null;
-    if (env.STRAVA_CLIENT_SECRET) {
+    if (env.STRAVA_CLIENT_SECRET && !willAutoRegister) {
       const exchanged = await exchangeStravaCode(code, confirmUrl, env);
       if (exchanged.ok) {
         athleteName = exchanged.name;
@@ -76,7 +81,7 @@ export default {
     }
 
     let githubResult = null;
-    if (env.GITHUB_DISPATCH_TOKEN && confirmUrl) {
+    if (willAutoRegister) {
       githubResult = await triggerGithubAuth(confirmUrl, env);
     }
 
@@ -150,6 +155,7 @@ function buildTelegramMessage({
     lines.push(
       "Em ~1–2 min o token entra em data/tokens_athletes.csv (commit no repo).",
     );
+    lines.push("(O nome do atleta aparece no log do workflow.)");
     lines.push("");
     lines.push(
       "Acompanhe: GitHub → Actions → Register Strava athlete",
