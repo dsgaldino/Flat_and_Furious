@@ -2,6 +2,7 @@ name = "flat-furious-notify"
 main = "telegram-notify.js"
 compatibility_date = "2024-01-01"
 
-# Secrets (set via: wrangler secret put TELEGRAM_BOT_TOKEN)
-# TELEGRAM_BOT_TOKEN
-# TELEGRAM_CHAT_ID
+# Secrets (wrangler secret put ...)
+# Required: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+# Auto-register: STRAVA_CLIENT_SECRET, GITHUB_DISPATCH_TOKEN
+# Optional: STRAVA_CLIENT_ID, STRAVA_REDIRECT_URI, GITHUB_REPO

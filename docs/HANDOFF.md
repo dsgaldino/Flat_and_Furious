@@ -69,7 +69,7 @@ python -m flatfurious monthly --month YYYY-MM --full   # se existir no __main__
 1. Repo remoto era `dsgal/...` — corrigido para `dsgaldino/...`
 2. `Notebooks/.env` sobrescrevia `CLIENT_SECRET` — removido do fluxo de config
 3. Só 3 atletas com token (Diego, Thamiris, Carlos); faltam os outros + re-auth com `activity:read_all`
-4. `TELEGRAM_NOTIFY_WEBHOOK` em `site/public/assets/join.js` está **vazio** — notificação Telegram ainda manual até deploy do Worker
+4. Telegram Worker ativo: `https://flat-furious-notify.dsgaldino.workers.dev` — auto-registro opcional: [`CONFIGURACAO_AUTO_ONBOARDING.md`](CONFIGURACAO_AUTO_ONBOARDING.md)
 5. Código do sprint PDF pode estar **só local** — rodar `git status` e commitar se faltar
 
 ---

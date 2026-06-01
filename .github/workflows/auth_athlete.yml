@@ -7,6 +7,8 @@ on:
         description: "Strava OAuth code or full redirect URL from athlete"
         required: true
         type: string
+  repository_dispatch:
+    types: [strava_auth]
 
 permissions:
   contents: write
@@ -29,7 +31,17 @@ jobs:
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-        run: python -m flatfurious auth --code "${{ github.event.inputs.auth_code }}"
+          STRAVA_REDIRECT_URI: https://dsgaldino.github.io/Flat_and_Furious/strava/callback.html
+        run: |
+          CODE="${{ github.event.inputs.auth_code }}"
+          if [ -z "$CODE" ]; then
+            CODE="${{ github.event.client_payload.auth_code }}"
+          fi
+          if [ -z "$CODE" ]; then
+            echo "No auth_code in workflow_dispatch or repository_dispatch payload"
+            exit 1
+          fi
+          python -m flatfurious auth --code "$CODE"
 
       - name: Commit tokens
         uses: stefanzweifel/git-auto-commit-action@v5
