@@ -1,0 +1,137 @@
+{
+  "month_year": "2026-02",
+  "month_label_pt": "Fevereiro/2026",
+  "year_label_pt": "ate fevereiro/2026",
+  "group_start_label": "01/08/2022",
+  "generated_at": "2026-06-02T18:06:13.652962Z",
+  "distance_month_km": 752.0,
+  "distance_year_km": 2366.0,
+  "distance_since_group_km": 15081.0,
+  "earth_percent_since_group": 0.3763,
+  "year": 2026,
+  "month_highlights": {
+    "maior_distancia": {
+      "athlete": "Jair de Souza Junior",
+      "value": "217 km",
+      "metric": ""
+    },
+    "mais_rapido": {
+      "athlete": "Diego Galdino",
+      "value": "75.1 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "3175 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "9h36m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "9 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "51.0 km",
+      "metric": ""
+    }
+  },
+  "top3_rides": [
+    {
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 51.0
+    },
+    {
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 37.6
+    },
+    {
+      "athlete": "Diego Galdino",
+      "distance_km": 37.4
+    }
+  ],
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 217.43
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 173.77
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 162.97
+    },
+    {
+      "rank": 4,
+      "athlete": "Laetitia Gerber",
+      "distance_km": 127.15
+    },
+    {
+      "rank": 5,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 70.28
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 7,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Diego Galdino",
+      "distance_km": 653.48
+    },
+    {
+      "rank": 2,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 622.14
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 524.63
+    },
+    {
+      "rank": 4,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 332.91
+    },
+    {
+      "rank": 5,
+      "athlete": "Laetitia Gerber",
+      "distance_km": 232.56
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 7,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O grupo rodou o equivalente a 17,8 maratonas neste mes.",
+    "Subida acumulada: 9.308 m — como 1,05× o Everest."
+  ]
+}

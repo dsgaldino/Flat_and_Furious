@@ -32,15 +32,36 @@
           <div class="label">km em {{ summary.year }}</div>
         </div>
         <div class="stat">
-          <div class="value">{{ "%.1f"|format(summary.earth_percent_year * 100) }}%</div>
+          <div class="value">{{ "%.0f"|format(summary.distance_since_group_km|default(0)) }}</div>
+          <div class="label">km desde {{ summary.group_start_label|default('criacao') }}</div>
+        </div>
+        <div class="stat">
+          <div class="value">{{ "%.1f"|format((summary.earth_percent_since_group|default(summary.earth_percent_year|default(0))) * 100) }}%</div>
           <div class="label">volta ao mundo</div>
         </div>
       </div>
-      {% if summary.fastest %}
-      <p>Mais r&aacute;pido: <strong>{{ summary.fastest.athlete }}</strong> ({{ summary.fastest.max_speed_kmh }} km/h)</p>
-      {% endif %}
-      {% if summary.most_moving_time %}
-      <p>Mais tempo pedalando: <strong>{{ summary.most_moving_time.athlete }}</strong> ({{ summary.most_moving_time.duration }})</p>
+      {% if summary.month_highlights %}
+      <h3>Destaque do m&ecirc;s</h3>
+      <ul>
+        {% if summary.month_highlights.maior_distancia %}
+        <li>Maior dist&acirc;ncia: <strong>{{ summary.month_highlights.maior_distancia.athlete }}</strong> ({{ summary.month_highlights.maior_distancia.value }})</li>
+        {% endif %}
+        {% if summary.month_highlights.mais_rapido %}
+        <li>Mais r&aacute;pido: <strong>{{ summary.month_highlights.mais_rapido.athlete }}</strong> ({{ summary.month_highlights.mais_rapido.value }})</li>
+        {% endif %}
+        {% if summary.month_highlights.escalador %}
+        <li>Escalador: <strong>{{ summary.month_highlights.escalador.athlete }}</strong> ({{ summary.month_highlights.escalador.value }})</li>
+        {% endif %}
+        {% if summary.month_highlights.mais_tempo %}
+        <li>Mais tempo: <strong>{{ summary.month_highlights.mais_tempo.athlete }}</strong> ({{ summary.month_highlights.mais_tempo.value }})</li>
+        {% endif %}
+        {% if summary.month_highlights.mais_pedaladas %}
+        <li>Pedaladas: <strong>{{ summary.month_highlights.mais_pedaladas.athlete }}</strong> ({{ summary.month_highlights.mais_pedaladas.value }})</li>
+        {% endif %}
+        {% if summary.month_highlights.pedal_mais_longo %}
+        <li>Pedal mais longo: <strong>{{ summary.month_highlights.pedal_mais_longo.athlete }}</strong> ({{ summary.month_highlights.pedal_mais_longo.value }})</li>
+        {% endif %}
+      </ul>
       {% endif %}
     </section>
 

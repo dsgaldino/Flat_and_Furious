@@ -13,6 +13,7 @@ import pandas as pd
 import requests
 
 from flatfurious.config import client_id, client_secret, strava_redirect_uri, tokens_path
+from flatfurious.data.members import canonical_athlete_name, load_members
 
 REQUIRED_TOKEN_COLUMNS = [
     "nome",
@@ -61,6 +62,15 @@ def extract_code_from_input(raw: str) -> str:
     return raw
 
 
+def _format_athlete_name(first: str, last: str) -> str:
+    """Display name from Strava fields, aligned with members.csv when possible."""
+    raw = " ".join(p for p in ((first or "").strip(), (last or "").strip()) if p)
+    try:
+        return canonical_athlete_name(raw, load_members())
+    except FileNotFoundError:
+        return " ".join(word.capitalize() for word in raw.split())
+
+
 def token_response_to_row(data: dict[str, Any]) -> dict[str, Any]:
     """Flatten Strava OAuth token JSON into a CSV row."""
     athlete = data.get("athlete") or {}
@@ -68,7 +78,7 @@ def token_response_to_row(data: dict[str, Any]) -> dict[str, Any]:
     last = athlete.get("lastname", "")
 
     return {
-        "nome": f"{first} {last}".strip(),
+        "nome": _format_athlete_name(first, last),
         "athlete_id": int(athlete["id"]),
         "access_token": data["access_token"],
         "refresh_token": data["refresh_token"],
@@ -108,6 +118,13 @@ def normalize_tokens_df(df: pd.DataFrame) -> pd.DataFrame:
 
     if "athlete_id" in df.columns:
         df["athlete_id"] = pd.to_numeric(df["athlete_id"], errors="coerce").astype("Int64")
+
+    if "nome" in df.columns:
+        try:
+            members = load_members()
+            df["nome"] = df["nome"].map(lambda n: canonical_athlete_name(n, members))
+        except FileNotFoundError:
+            pass
 
     extra = [c for c in df.columns if c not in CSV_COLUMN_ORDER]
     ordered = [c for c in CSV_COLUMN_ORDER if c in df.columns] + extra

@@ -1,0 +1,115 @@
+# AI Infographic Prompt — Maio/2026
+# Gerado automaticamente pelo Flat & Furious
+
+=== PROMPT PRINCIPAL (copiar para a IA de imagem) ===
+
+Infographic dashboard poster, tall vertical layout, clean modern sports analytics UI.
+Reference: light cream background #E8EEF4, white rounded cards with soft shadows, Dutch orange #D35400, navy #1A3A52, gold accent #C9A227.
+Header band navy with gold text "FLAT & FURIOUS" and orange title "ANALISE DE CICLISMO" and subtitle "MAIO 2026".
+
+ALL SECTIONS IN PORTUGUESE (legible typography):
+
+1) Row of 3 distance cards:
+   - "Distancia no mes" → 1439 km (green)
+   - "Total em 2026" → 4506 km (blue)
+   - "Desde criacao do grupo" → 17221 km, subtitle "43% volta ao mundo" with thin progress bar (purple)
+
+2) "DESTAQUE DO MES" white panel:
+   Maior distancia: Rodrigo Bonilha — 251 km
+   Mais rapido: Vinicius Cainelli — 49.3 km/h
+   Escalador: Carlos Prado — 616 m
+   Mais tempo pedalando: Vinicius Cainelli — 14h30m
+   Numero de pedaladas: Rodrigo Bonilha — 6 pedaladas
+   Pedal mais longo: Jair de Souza Junior — 73.3 km
+
+3) Two columns:
+   LEFT: podium "TOP 3 PEDALADAS MAIS LONGAS":
+   1 (gold): Jair de Souza Junior — 73.3 km
+   2 (silver): Vinicius Cainelli — 73.2 km
+   3 (bronze): Rodrigo Bonilha — 72.9 km
+   RIGHT: gold-bordered "CURIOSIDADES DO MES":
+   (1) Tempo em movimento estimado: 72h — um turno de 9,0 dias de trabalho.
+   (2) Daqui a pouco da volta ao mundo: 3,59% do perimetro terrestre so neste mes.
+
+5) "RANKINGS" — two tables side by side:
+   "RANKING MENSAL":
+   1. Rodrigo Bonilha — 251 km
+   2. Carlos Prado — 240 km
+   3. Vinicius Cainelli — 231 km
+   4. Jair de Souza Junior — 223 km
+   5. Laetitia Gerber — 222 km
+   6. Diego Galdino — 160 km
+   7. Thamiris Ramos — 111 km
+   8. Jonathan Machado — 0 km
+   "RANKING ANUAL 2026":
+   1. Jair de Souza Junior — 1032 km
+   2. Rodrigo Bonilha — 877 km
+   3. Diego Galdino — 845 km
+   4. Thamiris Ramos — 658 km
+   5. Laetitia Gerber — 539 km
+   6. Carlos Prado — 324 km
+   7. Vinicius Cainelli — 231 km
+   8. Jonathan Machado — 0 km
+
+Footer small text: "Pelotao Enschede | NL + BR | Ride + VirtualRide"
+
+Decorative (subtle margins): Dutch windmills on flat green polder, canal with bicycles, orange tulips; Brazilian touches — coffee cup, pastel/brigadeiro, green beer bottle (Grolsch style), soft green-yellow accents (no literal flag). Cycling peloton silhouette in header. Flat Twente terrain, no mountains.
+
+Style: flat vector + UI mockup hybrid, professional Strava club monthly report, high contrast, 4K, sharp text areas.
+
+DO NOT include: "destaques nem tanto", shame cards, negative rankings, least active.
+
+Negative prompt: blurry illegible text, dark theme, mountains, motorcycles, watermark, cluttered collage, photorealistic faces.
+
+=== BLOCO DE DADOS (PT — conferencia de numeros) ===
+
+TITULO: FLAT & FURIOUS — ANALISE DE CICLISMO — MAIO 2026
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 1439 km
+• Total em 2026: 4506 km
+• Desde criacao do grupo: 17221 km (43.0% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Maior distancia: Rodrigo Bonilha — 251 km
+• Mais rapido: Vinicius Cainelli — 49.3 km/h
+• Escalador: Carlos Prado — 616 m
+• Mais tempo pedalando: Vinicius Cainelli — 14h30m
+• Numero de pedaladas: Rodrigo Bonilha — 6 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 73.3 km
+
+RANKING DO MES (km):
+1. Rodrigo Bonilha — 251 km
+2. Carlos Prado — 240 km
+3. Vinicius Cainelli — 231 km
+4. Jair de Souza Junior — 223 km
+5. Laetitia Gerber — 222 km
+6. Diego Galdino — 160 km
+7. Thamiris Ramos — 111 km
+8. Jonathan Machado — 0 km
+
+RANKING EM 2026 (km):
+1. Jair de Souza Junior — 1032 km
+2. Rodrigo Bonilha — 877 km
+3. Diego Galdino — 845 km
+4. Thamiris Ramos — 658 km
+5. Laetitia Gerber — 539 km
+6. Carlos Prado — 324 km
+7. Vinicius Cainelli — 231 km
+8. Jonathan Machado — 0 km
+
+TOP 3 PEDALADAS MAIS LONGAS:
+1. Jair de Souza Junior — 73.3 km
+2. Vinicius Cainelli — 73.2 km
+3. Rodrigo Bonilha — 72.9 km
+
+CURIOSIDADES:
+1. Tempo em movimento estimado: 72h — um turno de 9,0 dias de trabalho.
+2. Daqui a pouco da volta ao mundo: 3,59% do perimetro terrestre so neste mes.
+
+RODAPE: Pelotao Enschede | NL + BR | Ride + VirtualRide
+
+NAO INCLUIR: destaques nem tanto, rankings negativos, menor atividade.
+
+=== DICA ===
+Anexe reports/2026-05/infographic.png como referencia de layout. Para texto 100% correto, sobreponha numeros no Canva/Figma usando o bloco de dados acima.

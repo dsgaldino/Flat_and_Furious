@@ -12,6 +12,7 @@ from flatfurious.report.monthly import (
     previous_month,
     save_summary,
 )
+from flatfurious.report.ai_prompt import save_ai_prompt
 from flatfurious.report.whatsapp import save_whatsapp_text
 from flatfurious.site.build import build_site
 from flatfurious.strava.auth import add_athlete_from_code
@@ -35,6 +36,7 @@ def cmd_report(args: argparse.Namespace) -> None:
     summary = build_summary(month)
     save_summary(month, summary)
     save_whatsapp_text(summary, month)
+    save_ai_prompt(summary, month)
     generate_infographic(summary)
     if args.build_site:
         build_site(latest_month=month)

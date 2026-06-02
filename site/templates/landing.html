@@ -62,7 +62,7 @@
           <div class="label">km em {{ latest_summary.year }}</div>
         </div>
         <div class="stat">
-          <div class="value">{{ "%.1f"|format(latest_summary.earth_percent_year * 100) }}%</div>
+          <div class="value">{{ "%.1f"|format((latest_summary.earth_percent_since_group|default(latest_summary.earth_percent_year|default(0))) * 100) }}%</div>
           <div class="label">volta ao mundo</div>
         </div>
       </div>
