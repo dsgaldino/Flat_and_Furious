@@ -1,0 +1,71 @@
+{
+  "month_year": "2022-11",
+  "month_label_pt": "Novembro/2022",
+  "year_label_pt": "ate novembro/2022",
+  "group_start_label": "01/08/2022",
+  "year": 2022,
+  "distance_month_km": 121.58,
+  "distance_year_km": 652.0,
+  "distance_year_km_exact": 651.9,
+  "distance_since_group_km": 652.0,
+  "distance_since_group_km_exact": 651.9,
+  "earth_percent_since_group": 0.0163,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "77.4 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "1156 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "6h04m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "10 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "16.8 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 121.58
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 651.9
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 35% do caminho Londres → Paris (344 km entre os dois).",
+    "Uma cegonha-branca percorre ~20 mil km por ano nas migracoes. O grupo fez 1% desse percurso anual so em um mes."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:08.670673Z"
+}

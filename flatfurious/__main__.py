@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import datetime
 
 from flatfurious.data.clean import clean_and_save
 from flatfurious.report.charts import generate_infographic
@@ -13,6 +14,7 @@ from flatfurious.report.monthly import (
     save_summary,
 )
 from flatfurious.report.ai_prompt import save_ai_prompt
+from flatfurious.report.scaffold import scaffold_all_distance_reports
 from flatfurious.report.whatsapp import save_whatsapp_text
 from flatfurious.site.build import build_site
 from flatfurious.strava.auth import add_athlete_from_code
@@ -46,6 +48,37 @@ def cmd_site_build(args: argparse.Namespace) -> None:
     build_site(latest_month=args.month)
 
 
+def cmd_scaffold(args: argparse.Namespace) -> None:
+    end = args.through or datetime.today().strftime("%Y-%m")
+    scaffold_all_distance_reports(
+        end_month_year=end,
+        migrate_legacy=not args.no_migrate,
+        overwrite=not args.no_overwrite,
+    )
+
+
+def cmd_scaffold_parser(sub: argparse._SubParsersAction) -> None:
+    p = sub.add_parser(
+        "scaffold",
+        help="Create reports/YEAR/MM with distance-only files for each month",
+    )
+    p.add_argument(
+        "--through",
+        help="Last month YYYY-MM (default: current month)",
+    )
+    p.add_argument(
+        "--no-migrate",
+        action="store_true",
+        help="Do not move legacy reports/YYYY-MM/ folders first",
+    )
+    p.add_argument(
+        "--no-overwrite",
+        action="store_true",
+        help="Skip months that already have summary.json",
+    )
+    p.set_defaults(func=cmd_scaffold)
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="flatfurious",
@@ -77,6 +110,8 @@ def main(argv: list[str] | None = None) -> int:
     p_site = sub.add_parser("site-build", help="Build static site from reports")
     p_site.add_argument("--month", help="Latest month to feature on index")
     p_site.set_defaults(func=cmd_site_build)
+
+    cmd_scaffold_parser(sub)
 
     args = parser.parse_args(argv)
     try:

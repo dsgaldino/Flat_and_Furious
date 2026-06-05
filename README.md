@@ -69,7 +69,7 @@ data/
   tokens_athletes.csv
   activities_all.csv
   activities_formatted.csv
-reports/YYYY-MM/
+reports/YYYY/MM/
   summary.json
   whatsapp.txt
   infographic.png
@@ -79,4 +79,4 @@ flatfurious/          # codigo do pipeline
 
 ## WhatsApp
 
-O arquivo `reports/YYYY-MM/whatsapp.txt` e gerado automaticamente. Copie o texto e anexe `infographic.png` no grupo. Envio via API fica para fase futura.
+O arquivo `reports/YYYY/MM/whatsapp.txt` e gerado automaticamente. Copie o texto e anexe `infographic.png` no grupo. Envio via API fica para fase futura.

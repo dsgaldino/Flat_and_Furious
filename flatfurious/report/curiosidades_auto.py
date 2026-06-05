@@ -7,59 +7,81 @@ from typing import Callable
 
 AROUND_EARTH_KM = 40075
 
-# Real-world reference distances (km)
+# Referencias do mundo real
 _REF = {
-    "amsterdam_paris": 504,
     "enschede_utrecht": 120,
     "marco_zero": 42.195,
-    "ultra_distance": 200,
+    "onibus_escolar_m": 12.0,
+    "formiga_m": 0.01,
+    "terna_artica_km_ano": 96_000,
+    "cegonha_km_ano": 20_000,
+    "monte_fuji_m": 3776,
+    "everest_m": 8848,
+    "k2_m": 8611,  # Himalaia — cume K2
 }
 
-# Curiosidades fixas por mes (ex.: janeiro/2026 usou Amsterdam-Paris so naquele relatorio)
-MONTH_CURIOSITY_KEYS: dict[str, list[str]] = {
-    "2026-01": ["enschede_koln", "amsterdam_paris"],
-    "2026-02": ["maratona", "everest"],
-}
+# Trechos famosos (origem, destino, km) — rotacionam por mes
+_FAMOUS_ROUTES: list[tuple[str, str, float]] = [
+    ("Amsterdam", "Paris", 504),
+    ("Londres", "Paris", 344),
+    ("Rio de Janeiro", "Sao Paulo", 429),
+    ("Madrid", "Barcelona", 621),
+    ("Berlim", "Praga", 350),
+    ("Nova York", "Boston", 360),
+    ("Lisboa", "Porto", 313),
+    ("Enschede", "Koln", 180),
+    ("Cidade do Mexico", "Guadalajara", 540),
+    ("Sydney", "Melbourne", 878),
+    ("Buenos Aires", "Montevideu", 230),
+    ("Cairo", "Alexandria", 220),
+    ("Mumbai", "Goa", 590),
+    ("Oslo", "Bergen", 463),
+]
 
-# Nunca entram no sorteio automatico (confusas, numeros ridiculos ou repetitivas)
+# Cervejas que rotacionam na curiosidade "daria pra beber X garrafas"
+_BEER_BRANDS: list[str] = [
+    "Grolsch",
+    "Heineken",
+    "Amstel",
+    "Hertog Jan",
+    "Bavaria",
+    "Jupiler",
+]
+
+# Curiosidades chatas ou confusas — fora do sorteio
 _AUTO_POOL_EXCLUDE = {
     "media_atleta",
     "piscinas",
-    "pizzas",
-    "formigas",
-    "latas",
 }
 
-
-def _eligible_keys(ctx: Context, registry: dict[str, Callable[[Context], str | None]]) -> list[str]:
-    """Curiosidades que fazem sentido com os dados do mes."""
-    km = float(ctx["distance_km"])
-    rides = int(ctx["ride_count"])
-    elev = float(ctx.get("elevation_m", 0))
-
-    rules: dict[str, bool] = {
-        "maratona": km >= 1,
-        "enschede_koln": km >= 1,
-        "amsterdam_paris": km >= 1,
-        "volta_mundo": km >= 80,
-        "grolsch": km >= 80,
-        "pedestre": km >= 80,
-        "pedaladas_media": rides >= 1,
-        "fim_de_semana": rides >= 1,
-        "tempo_trabalho": km >= 1,
-        "everest": elev >= 1000,
-    }
-
-    eligible = []
-    for key in sorted(registry):
-        if key in _AUTO_POOL_EXCLUDE:
-            continue
-        if not rules.get(key, True):
-            continue
-        text = registry[key](ctx)
-        if text:
-            eligible.append(key)
-    return eligible
+# Categorias para forcar variedade (2 frases de tipos diferentes quando possivel)
+_CATEGORIES: dict[str, list[str]] = {
+    "natureza": [
+        "formigas",
+        "migracao_terna",
+        "migracao_cegonha",
+        "onibus_escolar",
+    ],
+    "subida": [
+        "monte_fuji",
+        "monte_everest",
+        "monte_himalaia",
+        "tres_cumes",
+    ],
+    "distancia": [
+        "maratona",
+        "rota_famosa",
+        "grolsch",
+        "pedestre",
+        "pizzas",
+        "latas",
+    ],
+    "rota_europa": [
+        "enschede_utrecht",
+    ],
+    "tempo": ["cerveja"],
+    "pelotao": ["pedaladas_media", "fim_de_semana"],
+}
 
 Context = dict[str, float | int | str]
 
@@ -73,55 +95,137 @@ def _fmt_decimal(n: float, places: int = 1) -> str:
 
 
 def _builder_registry() -> dict[str, Callable[[Context], str | None]]:
+    def formigas(ctx: Context) -> str:
+        km = float(ctx["distance_km"])
+        ants = km * 1000 / _REF["formiga_m"]
+        return (
+            f"Uma fila de formigas (1 cm cada) com {_fmt_int(ants)} individuos "
+            f"ia de Enschede ate passar a fronteira belga — e ainda sobra."
+        )
+
+    def onibus_escolar(ctx: Context) -> str:
+        km = float(ctx["distance_km"])
+        buses = km * 1000 / _REF["onibus_escolar_m"]
+        return (
+            f"Daria para estacionar {_fmt_int(buses)} onibus escolares "
+            f"bumper a bumper — {km:.0f} km de asfalto amarelo."
+        )
+
+    def migracao_terna(ctx: Context) -> str:
+        km = float(ctx["distance_km"])
+        monthly_tern = _REF["terna_artica_km_ano"] / 12
+        months = km / monthly_tern if monthly_tern else 0
+        return (
+            f"A terna-artica e a campea de migracao (~96 mil km/ano). "
+            f"Neste mes o pelotao cobriu o equivalente a {_fmt_decimal(months, 1)} "
+            f"meses de voo dela."
+        )
+
+    def migracao_cegonha(ctx: Context) -> str:
+        km = float(ctx["distance_km"])
+        pct = km / _REF["cegonha_km_ano"] * 100
+        return (
+            f"Uma cegonha-branca percorre ~20 mil km por ano nas migracoes. "
+            f"O grupo fez {_fmt_decimal(pct, 0)}% desse percurso anual so em um mes."
+        )
+
+    def monte_fuji(ctx: Context) -> str | None:
+        elev = float(ctx.get("elevation_m", 0))
+        if elev < 100:
+            return None
+        climbs = elev / _REF["monte_fuji_m"]
+        return (
+            f"Subida acumulada de {_fmt_int(elev)} m — "
+            f"daria para escalar o Monte Fuji {_fmt_decimal(climbs, 1)} vezes."
+        )
+
+    def monte_everest(ctx: Context) -> str | None:
+        elev = float(ctx.get("elevation_m", 0))
+        if elev < 200:
+            return None
+        climbs = elev / _REF["everest_m"]
+        return (
+            f"Com {_fmt_int(elev)} m de subida, o pelotao subiria o Everest "
+            f"{_fmt_decimal(climbs, 2)} vezes (sem oxigenio extra)."
+        )
+
+    def monte_himalaia(ctx: Context) -> str | None:
+        elev = float(ctx.get("elevation_m", 0))
+        if elev < 200:
+            return None
+        climbs = elev / _REF["k2_m"]
+        return (
+            f"Himalaia na conta: {_fmt_int(elev)} m de ganho — "
+            f"equivalente a {_fmt_decimal(climbs, 2)} ascensoes ao K2."
+        )
+
+    def tres_cumes(ctx: Context) -> str | None:
+        elev = float(ctx.get("elevation_m", 0))
+        total = _REF["monte_fuji_m"] + _REF["everest_m"] + _REF["k2_m"]
+        if elev < 500:
+            return None
+        stacks = elev / total
+        return (
+            f"Fuji + Everest + K2 empilhados mentalmente: "
+            f"{_fmt_decimal(stacks, 2)} voltas completas com a subida do mes."
+        )
+
     def maratona(ctx: Context) -> str:
         km = float(ctx["distance_km"])
         n = km / _REF["marco_zero"]
-        return f"O grupo rodou o equivalente a {_fmt_decimal(n, 1)} maratonas neste mes."
+        return f"O pelotao rodou o equivalente a {_fmt_decimal(n, 1)} maratonas oficiais."
 
-    def volta_mundo(ctx: Context) -> str:
+    def rota_famosa(ctx: Context) -> str:
         km = float(ctx["distance_km"])
-        pct = km / AROUND_EARTH_KM * 100
-        return f"Daqui a pouco da volta ao mundo: {_fmt_decimal(pct, 2)}% do perimetro terrestre so neste mes."
+        month_year = str(ctx["month_year"])
+        digest = hashlib.sha256(f"rota:{month_year}".encode()).hexdigest()
+        idx = int(digest[:8], 16) % len(_FAMOUS_ROUTES)
+        origem, destino, dist = _FAMOUS_ROUTES[idx]
+        trips = km / dist
+        if trips >= 1.05:
+            return (
+                f"Com {km:.0f} km, o pelotao faria {origem} → {destino} "
+                f"({_fmt_decimal(trips, 1)}x; trecho de {dist:.0f} km)."
+            )
+        pct = trips * 100
+        return (
+            f"O pelotao percorreu {pct:.0f}% do caminho {origem} → {destino} "
+            f"({dist:.0f} km entre os dois)."
+        )
 
-    def amsterdam_paris(ctx: Context) -> str:
+    def enschede_utrecht(ctx: Context) -> str:
         km = float(ctx["distance_km"])
-        trips = km / _REF["amsterdam_paris"]
-        return f"Daria para ir de Amsterdam a Paris {_fmt_decimal(trips, 1)}x com essa distancia."
+        trips = km / _REF["enschede_utrecht"]
+        return f"Enschede–Utrecht ({_REF['enschede_utrecht']} km) caberia {_fmt_decimal(trips, 1)}x."
 
     def grolsch(ctx: Context) -> str:
         km = float(ctx["distance_km"])
         bottles = km * 1000 / 0.25
-        return f"Em garrafas Grolsch de 25 cm, seriam {_fmt_int(bottles)} unidades enfileiradas."
+        return f"Em garrafas Grolsch de 25 cm: {_fmt_int(bottles)} unidades em fila indiana."
 
     def pedaladas_media(ctx: Context) -> str:
         rides = int(ctx["ride_count"])
         km = float(ctx["distance_km"])
         avg = km / rides if rides else 0
-        return f"Foram {rides} pedaladas, media de {_fmt_decimal(avg, 1)} km por saida."
+        return f"Foram {rides} pedaladas — media de {_fmt_decimal(avg, 1)} km por saida."
 
     def pedestre(ctx: Context) -> str:
         km = float(ctx["distance_km"])
         steps = km * 1000 / 0.75
-        return (
-            f"Um pedestre precisaria de {_fmt_int(steps)} passos "
-            f"para cobrir a mesma distancia."
-        )
+        return f"Um pedestre precisaria de {_fmt_int(steps)} passos para o mesmo percurso."
 
-    def everest(ctx: Context) -> str | None:
-        elev = float(ctx.get("elevation_m", 0))
-        if elev <= 0:
-            return None
-        everests = elev / 8848
-        return f"Subida acumulada: {_fmt_int(elev)} m — como {_fmt_decimal(everests, 2)}× o Everest."
-
-    def tempo_trabalho(ctx: Context) -> str:
+    def cerveja(ctx: Context) -> str:
         km = float(ctx["distance_km"])
         hours = float(ctx.get("moving_hours", 0))
         if hours <= 0:
             hours = km / 22
+        bottles = max(1, int(round(hours * 2)))  # 1 garrafa a cada 30 min em movimento
+        month_year = str(ctx["month_year"])
+        digest = hashlib.sha256(f"cerveja:{month_year}".encode()).hexdigest()
+        brand = _BEER_BRANDS[int(digest[:8], 16) % len(_BEER_BRANDS)]
         return (
-            f"Tempo em movimento estimado: {hours:.0f}h — "
-            f"um turno de {_fmt_decimal(hours / 8, 1)} dias de trabalho."
+            f"Com {hours:.0f}h em movimento, daria pra beber {_fmt_int(bottles)} "
+            f"garrafas de {brand} — uma a cada meia hora de estrada."
         )
 
     def pizzas(ctx: Context) -> str:
@@ -129,66 +233,156 @@ def _builder_registry() -> dict[str, Callable[[Context], str | None]]:
         count = km * 1000 / 0.94
         return f"Da para alinhar {_fmt_int(count)} pizzas de 30 cm, uma atras da outra."
 
-    def media_atleta(ctx: Context) -> str:
-        athletes = int(ctx.get("eligible_athlete_count") or ctx.get("athlete_count") or 0)
-        km = float(ctx["distance_km"])
-        per = km / athletes if athletes else km
-        return (
-            f"Em media, cada ciclista do pelotao pedalou {per:.0f} km neste mes "
-            f"({athletes} atletas no grupo)."
-        )
-
-    def enschede_koln(ctx: Context) -> str:
-        km = float(ctx["distance_km"])
-        return f"Em linha reta, {km:.0f} km passam de Enschede ate além de Koln."
-
     def latas(ctx: Context) -> str:
         km = float(ctx["distance_km"])
         cokes = km * 1000 / 0.115
-        return f"Seriam {_fmt_int(cokes)} latas de refrigerante colocadas em fila."
-
-    def piscinas(ctx: Context) -> str:
-        km = float(ctx["distance_km"])
-        pools = km * 1000 * 0.00033 / 2500
-        return f"Em volume de lata, encheria {_fmt_decimal(pools, 2)} piscinas olimpicas."
-
-    def formigas(ctx: Context) -> str:
-        km = float(ctx["distance_km"])
-        ants = km * 1000 / 0.01
-        return f"Uma fila de formigas de {_fmt_int(ants)} individuos alcançaria a mesma distancia."
+        return f"Seriam {_fmt_int(cokes)} latas de refrigerante em fila no acostamento."
 
     def fim_de_semana(ctx: Context) -> str:
         weekends = int(ctx.get("weekend_rides", 0))
-        return f"Dos {int(ctx['ride_count'])} treinos, {weekends} foram no fim de semana."
+        rides = int(ctx["ride_count"])
+        return f"Dos {rides} treinos do mes, {weekends} foram no fim de semana."
 
     return {
+        "formigas": formigas,
+        "onibus_escolar": onibus_escolar,
+        "migracao_terna": migracao_terna,
+        "migracao_cegonha": migracao_cegonha,
+        "monte_fuji": monte_fuji,
+        "monte_everest": monte_everest,
+        "monte_himalaia": monte_himalaia,
+        "tres_cumes": tres_cumes,
         "maratona": maratona,
-        "volta_mundo": volta_mundo,
-        "amsterdam_paris": amsterdam_paris,
+        "rota_famosa": rota_famosa,
+        "enschede_utrecht": enschede_utrecht,
         "grolsch": grolsch,
         "pedaladas_media": pedaladas_media,
         "pedestre": pedestre,
-        "everest": everest,
-        "tempo_trabalho": tempo_trabalho,
+        "cerveja": cerveja,
         "pizzas": pizzas,
-        "media_atleta": media_atleta,
-        "enschede_koln": enschede_koln,
         "latas": latas,
-        "piscinas": piscinas,
-        "formigas": formigas,
         "fim_de_semana": fim_de_semana,
     }
 
 
-def _pick_two_indices(n: int, seed: int) -> tuple[int, int]:
-    """Two distinct indices in [0, n) from one seed."""
-    if n <= 1:
-        return 0, 0
-    i0 = seed % n
-    i1 = (seed // n) % (n - 1)
-    if i1 >= i0:
-        i1 += 1
-    return i0, i1
+def _eligible_keys(ctx: Context, registry: dict[str, Callable[[Context], str | None]]) -> list[str]:
+    """Curiosidades que fazem sentido com os dados do mes."""
+    km = float(ctx["distance_km"])
+    rides = int(ctx["ride_count"])
+    elev = float(ctx.get("elevation_m", 0))
+
+    rules: dict[str, bool] = {
+        "formigas": km >= 5,
+        "onibus_escolar": km >= 10,
+        "migracao_terna": km >= 20,
+        "migracao_cegonha": km >= 15,
+        "monte_fuji": elev >= 100,
+        "monte_everest": elev >= 200,
+        "monte_himalaia": elev >= 200,
+        "tres_cumes": elev >= 500,
+        "maratona": km >= 1,
+        "rota_famosa": km >= 15,
+        "grolsch": km >= 50,
+        "pedestre": km >= 30,
+        "pizzas": km >= 20,
+        "latas": km >= 10,
+        "enschede_utrecht": km >= 60,
+        "pedaladas_media": rides >= 1,
+        "fim_de_semana": rides >= 1,
+        "cerveja": km >= 1,
+    }
+
+    eligible = []
+    for key in sorted(registry):
+        if key in _AUTO_POOL_EXCLUDE:
+            continue
+        if not rules.get(key, True):
+            continue
+        text = registry[key](ctx)
+        if text:
+            eligible.append(key)
+    return eligible
+
+
+def _category_of(key: str) -> str:
+    for cat, keys in _CATEGORIES.items():
+        if key in keys:
+            return cat
+    return "outros"
+
+
+def _pick_diverse_keys(
+    pool: list[str], month_year: str, count: int = 2
+) -> list[str]:
+    """Pick `count` keys from different categories when possible."""
+    if not pool:
+        return []
+    digest = hashlib.sha256(month_year.encode()).hexdigest()
+    seed = int(digest[:8], 16)
+
+    by_cat: dict[str, list[str]] = {}
+    for key in pool:
+        by_cat.setdefault(_category_of(key), []).append(key)
+
+    cats = sorted(by_cat.keys())
+    if len(cats) > 1:
+        offset = seed % len(cats)
+        cats = cats[offset:] + cats[:offset]
+
+    picked: list[str] = []
+    for cat in cats:
+        if len(picked) >= count:
+            break
+        options = by_cat.get(cat, [])
+        if not options:
+            continue
+        idx = (seed + len(picked) * 7) % len(options)
+        picked.append(options[idx])
+
+    if len(picked) < count:
+        for offset in range(len(pool)):
+            key = pool[(seed + offset) % len(pool)]
+            if key not in picked:
+                picked.append(key)
+            if len(picked) >= count:
+                break
+
+    return picked[:count]
+
+
+# Ordem de rotacao para curiosidade 2 — percorre o catalogo ao longo dos meses.
+_SECONDARY_ROTATION: list[str] = [
+    "formigas",
+    "onibus_escolar",
+    "migracao_cegonha",
+    "migracao_terna",
+    "monte_fuji",
+    "monte_everest",
+    "monte_himalaia",
+    "tres_cumes",
+    "maratona",
+    "grolsch",
+    "pizzas",
+    "latas",
+    "pedestre",
+    "cerveja",
+    "pedaladas_media",
+    "fim_de_semana",
+]
+
+
+def _pick_secondary_key(month_year: str, pool: list[str], *, exclude: set[str]) -> str | None:
+    """Segunda curiosidade: tipo rotaciona a cada mes (independente do parceiro)."""
+    eligible = {k for k in pool if k not in exclude}
+    if not eligible:
+        return None
+    year, month = map(int, month_year.split("-"))
+    start = (year * 12 + month - 1) % len(_SECONDARY_ROTATION)
+    for offset in range(len(_SECONDARY_ROTATION)):
+        key = _SECONDARY_ROTATION[(start + offset) % len(_SECONDARY_ROTATION)]
+        if key in eligible:
+            return key
+    return None
 
 
 def _resolve_keys(
@@ -196,19 +390,28 @@ def _resolve_keys(
     registry: dict[str, Callable[[Context], str | None]],
     ctx: Context,
 ) -> list[str]:
-    if month_year in MONTH_CURIOSITY_KEYS:
-        return MONTH_CURIOSITY_KEYS[month_year]
-
     pool = _eligible_keys(ctx, registry)
     if len(pool) < 2:
-        pool = sorted(k for k in registry if k not in _AUTO_POOL_EXCLUDE)
+        pool = _eligible_keys(ctx, registry) or sorted(
+            k for k in registry if k not in _AUTO_POOL_EXCLUDE
+        )
 
-    digest = hashlib.sha256(month_year.encode()).hexdigest()
-    seed = int(digest[:8], 16)
-    if len(pool) == 1:
-        return pool
-    i0, i1 = _pick_two_indices(len(pool), seed)
-    return [pool[i0], pool[i1]]
+    picked: list[str] = []
+    if "rota_famosa" in pool:
+        picked.append("rota_famosa")
+
+    if len(picked) < 2:
+        # Rota famosa ja cobre comparacao de distancia; evita repetir trechos curtos.
+        exclude = {"rota_famosa", "enschede_utrecht"}
+        secondary = _pick_secondary_key(month_year, pool, exclude=exclude)
+        if secondary:
+            picked.append(secondary)
+        elif len(picked) < 2:
+            picked.extend(
+                _pick_diverse_keys(pool, f"{month_year}:extra", count=2 - len(picked))
+            )
+
+    return picked[:2]
 
 
 def gerar_curiosidades_auto(
@@ -224,7 +427,7 @@ def gerar_curiosidades_auto(
     weekend_rides: int = 0,
     count: int = 2,
 ) -> list[str]:
-    """Duas curiosidades por mes: override manual ou sorteio deterministico por hash."""
+    """Duas curiosidades por mes — sorteio deterministico com variedade por categoria."""
     if distance_km < 1:
         return []
 
@@ -253,22 +456,17 @@ def gerar_curiosidades_auto(
         if len(phrases) >= count:
             break
 
-    # Fallback se alguma curiosidade exigir dado ausente (ex.: everest sem elevacao)
     if len(phrases) < count:
-        pool = _eligible_keys(ctx, registry) or sorted(
-            k for k in registry if k not in _AUTO_POOL_EXCLUDE
+        pool = _eligible_keys(ctx, registry)
+        extra = _pick_diverse_keys(
+            [k for k in pool if k not in keys], f"{month_year}:fallback", count=count
         )
-        digest = hashlib.sha256(f"{month_year}:fallback".encode()).hexdigest()
-        seed = int(digest[:8], 16)
-        used = set(keys)
-        for offset in range(len(pool)):
-            key = pool[(seed + offset) % len(pool)]
-            if key in used:
+        for key in extra:
+            if key in keys:
                 continue
             text = registry[key](ctx)
-            if text:
+            if text and text not in phrases:
                 phrases.append(text)
-                used.add(key)
             if len(phrases) >= count:
                 break
 

@@ -1,0 +1,101 @@
+{
+  "month_year": "2023-11",
+  "month_label_pt": "Novembro/2023",
+  "year_label_pt": "ate novembro/2023",
+  "group_start_label": "01/08/2022",
+  "year": 2023,
+  "distance_month_km": 461.76,
+  "distance_year_km": 2429.0,
+  "distance_year_km_exact": 2429.43,
+  "distance_since_group_km": 3097.0,
+  "distance_since_group_km_exact": 3096.57,
+  "earth_percent_since_group": 0.0773,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "45.1 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "215 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "8h50m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "4 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "63.8 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 188.33
+    },
+    {
+      "rank": 2,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 153.45
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 60.12
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 59.86
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 810.07
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 711.26
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 582.76
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 325.34
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "Com 462 km, o pelotao faria Enschede → Koln (2,6x; trecho de 180 km).",
+    "Foram 9 pedaladas — media de 51,3 km por saida."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:17.255354Z"
+}

@@ -1,0 +1,101 @@
+{
+  "month_year": "2024-01",
+  "month_label_pt": "Janeiro/2024",
+  "year_label_pt": "ate janeiro/2024",
+  "group_start_label": "01/08/2022",
+  "year": 2024,
+  "distance_month_km": 466.44,
+  "distance_year_km": 466.0,
+  "distance_year_km_exact": 466.44,
+  "distance_since_group_km": 3692.0,
+  "distance_since_group_km_exact": 3691.9,
+  "earth_percent_since_group": 0.0921,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "80.5 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "2515 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "10h14m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "11 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Diego Galdino",
+      "value": "34.2 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 261.69
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 151.5
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 38.52
+    },
+    {
+      "rank": 4,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 14.73
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 261.69
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 151.5
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 38.52
+    },
+    {
+      "rank": 4,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 14.73
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "Com 466 km, o pelotao faria Lisboa → Porto (1,5x; trecho de 313 km).",
+    "Uma fila de formigas (1 cm cada) com 46.644.000 individuos ia de Enschede ate passar a fronteira belga — e ainda sobra."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:18.659605Z"
+}

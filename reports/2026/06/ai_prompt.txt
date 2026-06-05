@@ -1,0 +1,36 @@
+# AI Infographic Prompt — Junho/2026
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 0 km
+• Total em 2026: 4506 km
+• Desde criacao do grupo: 17221 km (43.0% de uma volta ao mundo)
+
+RANKING DO MES (km):
+1. Carlos Prado — 0 km
+2. Diego Galdino — 0 km
+3. Jair de Souza Junior — 0 km
+4. Jonathan Machado — 0 km
+5. Laetitia Gerber — 0 km
+6. Rodrigo Bonilha — 0 km
+7. Thamiris Ramos — 0 km
+8. Vinicius Cainelli — 0 km
+
+RANKING EM 2026 (km):
+1. Jair de Souza Junior — 1032 km
+2. Rodrigo Bonilha — 877 km
+3. Diego Galdino — 845 km
+4. Thamiris Ramos — 658 km
+5. Laetitia Gerber — 539 km
+6. Carlos Prado — 324 km
+7. Vinicius Cainelli — 231 km
+8. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Curiosidades aguardam km do mes (Ride/VirtualRide). Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2026/06/infographic.png

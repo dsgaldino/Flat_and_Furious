@@ -101,11 +101,9 @@ def _build_month_highlights(df_month: pd.DataFrame) -> dict[str, dict | None]:
             by_dist.index[0], f"{by_dist.iloc[0]:.0f} km"
         )
 
-    # Maior velocidade registrada (pico max_speed Strava); rides >= 10 km evitam spike em trecho curto
+    # Maior pico max_speed Strava no mes (qualquer pedalada com distancia > 0)
     if "max_speed" in df_month.columns:
-        df_sp = df_month[df_month["distance"] >= 10]
-        if df_sp.empty:
-            df_sp = df_month[df_month["distance"] > 0]
+        df_sp = df_month[df_month["distance"] > 0]
         if not df_sp.empty:
             peak = df_sp.groupby("athlete")["max_speed"].max().sort_values(ascending=False)
             out["mais_rapido"] = _athlete_stat(
@@ -265,8 +263,207 @@ def build_summary(month_year: str) -> dict:
     }
 
 
+def report_relative_path(month_year: str) -> str:
+    """Path under reports/ for a month (e.g. 2026/05)."""
+    year, month = map(int, month_year.split("-"))
+    return f"{year}/{month:02d}"
+
+
 def report_dir_for_month(month_year: str) -> Path:
-    return reports_dir() / month_year
+    return reports_dir() / report_relative_path(month_year)
+
+
+def list_report_months() -> list[str]:
+    """Sorted YYYY-MM keys for months that have summary.json."""
+    root = reports_dir()
+    if not root.exists():
+        return []
+    found: set[str] = set()
+    for entry in root.iterdir():
+        if not entry.is_dir():
+            continue
+        # Legacy flat layout: reports/2026-05/
+        if "-" in entry.name and len(entry.name) == 7:
+            if (entry / "summary.json").exists():
+                found.add(entry.name)
+            continue
+        # Year layout: reports/2026/05/
+        if entry.name.isdigit() and len(entry.name) == 4:
+            for month_dir in entry.iterdir():
+                if month_dir.is_dir() and (month_dir / "summary.json").exists():
+                    found.add(f"{entry.name}-{month_dir.name}")
+    return sorted(found)
+
+
+def compute_distance_month_km(month_year: str) -> float:
+    """Total group distance (Ride + VirtualRide) for one calendar month."""
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year]
+    if df_month.empty:
+        return 0.0
+    return round(float(df_month["distance"].sum()), 2)
+
+
+def compute_distance_year_through_month_km(month_year: str) -> float:
+    """Group distance from 1 Jan through the last day of month_year (same as full report)."""
+    rides = _load_rides()
+    df_year = rides[_year_through_month_mask(rides["date"], month_year)]
+    if df_year.empty:
+        return 0.0
+    return round(float(df_year["distance"].sum()), 2)
+
+
+def compute_pedal_mais_longo_highlight(month_year: str) -> dict[str, str] | None:
+    """Longest single ride in the month (distance > 0)."""
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year]
+    if df_month.empty:
+        return None
+    longest = df_month[df_month["distance"] > 0].sort_values("distance", ascending=False)
+    if longest.empty:
+        return None
+    row = longest.iloc[0]
+    return _athlete_stat(row["athlete"], f"{float(row['distance']):.1f} km")
+
+
+def compute_mais_rapido_highlight(month_year: str) -> dict[str, str] | None:
+    """Athlete with highest Strava max_speed peak in the month (any ride with distance > 0)."""
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year]
+    if df_month.empty or "max_speed" not in df_month.columns:
+        return None
+    df_sp = df_month[df_month["distance"] > 0]
+    if df_sp.empty:
+        return None
+    peak = df_sp.groupby("athlete")["max_speed"].max().sort_values(ascending=False)
+    return _athlete_stat(peak.index[0], f"{peak.iloc[0]:.1f} km/h")
+
+
+def compute_escalador_highlight(month_year: str) -> dict[str, str] | None:
+    """Athlete with highest total elevation_gain_m in the month."""
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year]
+    if df_month.empty or "elevation_gain_m" not in df_month.columns:
+        return None
+    elev = (
+        df_month.groupby("athlete")["elevation_gain_m"]
+        .sum()
+        .sort_values(ascending=False)
+    )
+    if elev.empty or elev.iloc[0] <= 0:
+        return None
+    return _athlete_stat(elev.index[0], f"{elev.iloc[0]:.0f} m")
+
+
+def compute_mais_tempo_highlight(month_year: str) -> dict[str, str] | None:
+    """Athlete with highest total moving_time in the month."""
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year].copy()
+    if df_month.empty:
+        return None
+    df_month["moving_time_td"] = pd.to_timedelta(df_month["moving_time"])
+    time_sum = df_month.groupby("athlete")["moving_time_td"].sum().sort_values(ascending=False)
+    if time_sum.empty:
+        return None
+    return _athlete_stat(time_sum.index[0], _format_duration(time_sum.iloc[0]))
+
+
+def compute_mais_pedaladas_highlight(month_year: str) -> dict[str, str] | None:
+    """Athlete with most ride activities in the month."""
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year]
+    if df_month.empty:
+        return None
+    ride_counts = df_month["athlete"].value_counts().sort_values(ascending=False)
+    if ride_counts.empty:
+        return None
+    return _athlete_stat(
+        ride_counts.index[0], f"{int(ride_counts.iloc[0])} pedaladas"
+    )
+
+
+def compute_distance_since_group_through_month_km(month_year: str) -> float:
+    """Cumulative group distance from group start through the last day of month_year."""
+    rides = _load_rides()
+    df_since = rides[_since_group_through_month_mask(rides["date"], month_year)]
+    if df_since.empty:
+        return 0.0
+    return round(float(df_since["distance"].sum()), 2)
+
+
+def build_distance_only_summary(month_year: str) -> dict:
+    """Minimal summary used while validating monthly distance calculations."""
+    year, month = map(int, month_year.split("-"))
+    year_label_pt = (
+        f"ate {MONTH_NAMES_PT.get(month, month_year).lower()}/{year}"
+        if month < 12
+        else str(year)
+    )
+    dist_year = compute_distance_year_through_month_km(month_year)
+    dist_since = compute_distance_since_group_through_month_km(month_year)
+    earth_pct = dist_since / AROUND_EARTH_KM
+    pedal_longo = compute_pedal_mais_longo_highlight(month_year)
+    mais_rapido = compute_mais_rapido_highlight(month_year)
+    escalador = compute_escalador_highlight(month_year)
+    mais_tempo = compute_mais_tempo_highlight(month_year)
+    mais_pedaladas = compute_mais_pedaladas_highlight(month_year)
+    members = load_members()
+    rides = _load_rides()
+    df_month = rides[rides["month_year"] == month_year]
+    df_year = rides[_year_through_month_mask(rides["date"], month_year)]
+    ranking_month = _build_ranking(df_month, month_year, members)
+    ranking_year = _build_ranking(df_year, month_year, members)
+    new_members = new_members_in_month(month_year, members)
+    ride_count = len(df_month) if not df_month.empty else 0
+    elevation_m = (
+        float(df_month["elevation_gain_m"].sum())
+        if not df_month.empty and "elevation_gain_m" in df_month.columns
+        else 0.0
+    )
+    moving_hours = 0.0
+    if not df_month.empty:
+        moving_hours = (
+            pd.to_timedelta(df_month["moving_time"]).sum().total_seconds() / 3600
+        )
+    weekend_rides = (
+        len(df_month[df_month["date"].dt.dayofweek >= 5]) if not df_month.empty else 0
+    )
+    dist_month = compute_distance_month_km(month_year)
+    curiosities = gerar_curiosidades_auto(
+        month_year,
+        dist_month,
+        ride_count=ride_count,
+        eligible_athlete_count=len(members_eligible_through_month(month_year, members)),
+        elevation_m=elevation_m,
+        moving_hours=moving_hours,
+        weekend_rides=weekend_rides,
+    )
+    return {
+        "month_year": month_year,
+        "month_label_pt": f"{MONTH_NAMES_PT.get(month, month_year)}/{year}",
+        "year_label_pt": year_label_pt,
+        "group_start_label": pd.Timestamp(group_start_date()).strftime("%d/%m/%Y"),
+        "year": year,
+        "distance_month_km": compute_distance_month_km(month_year),
+        "distance_year_km": round(dist_year, 0),
+        "distance_year_km_exact": dist_year,
+        "distance_since_group_km": round(dist_since, 0),
+        "distance_since_group_km_exact": dist_since,
+        "earth_percent_since_group": round(earth_pct, 4),
+        "month_highlights": {
+            "mais_rapido": mais_rapido,
+            "escalador": escalador,
+            "mais_tempo": mais_tempo,
+            "mais_pedaladas": mais_pedaladas,
+            "pedal_mais_longo": pedal_longo,
+        },
+        "ranking_month": ranking_month,
+        "ranking_year": ranking_year,
+        "new_members": new_members,
+        "curiosities": curiosities,
+        "status": "distance_only",
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+    }
 
 
 def save_summary(month_year: str, summary: dict | None = None) -> Path:

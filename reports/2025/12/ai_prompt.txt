@@ -1,0 +1,43 @@
+# AI Infographic Prompt — Dezembro/2025
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 26 km
+• Total em 2025: 6170 km
+• Desde criacao do grupo: 12715 km (31.7% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 72.1 km/h
+• Escalador: Jair de Souza Junior — 209 m
+• Mais tempo pedalando: Jair de Souza Junior — 0h34m
+• Numero de pedaladas: Thamiris Ramos — 1 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 13.3 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 7% do caminho Berlim → Praga (350 km entre os dois).
+2. O pelotao rodou o equivalente a 0,6 maratonas oficiais.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 13 km
+2. Thamiris Ramos — 13 km
+3. Diego Galdino — 0 km
+4. Jonathan Machado — 0 km
+5. Rodrigo Bonilha — 0 km
+6. Vinicius Cainelli — 0 km
+
+RANKING EM 2025 (km):
+1. Rodrigo Bonilha — 1877 km
+2. Thamiris Ramos — 1205 km
+3. Diego Galdino — 1202 km
+4. Jair de Souza Junior — 1059 km
+5. Vinicius Cainelli — 827 km
+6. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2025/12/infographic.png

@@ -1,0 +1,35 @@
+# AI Infographic Prompt — Outubro/2022
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 124 km
+• Total em 2022: 530 km
+• Desde criacao do grupo: 530 km (1.3% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 78.7 km/h
+• Escalador: Thamiris Ramos — 912 m
+• Mais tempo pedalando: Thamiris Ramos — 5h08m
+• Numero de pedaladas: Thamiris Ramos — 9 pedaladas
+• Pedal mais longo: Thamiris Ramos — 20.1 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 36% do caminho Berlim → Praga (350 km entre os dois).
+2. Daria para estacionar 10.367 onibus escolares bumper a bumper — 124 km de asfalto amarelo.
+
+RANKING DO MES (km):
+1. Thamiris Ramos — 124 km
+2. Jonathan Machado — 0 km
+
+RANKING EM 2022 (km):
+1. Thamiris Ramos — 530 km
+2. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2022/10/infographic.png

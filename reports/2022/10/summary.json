@@ -1,0 +1,71 @@
+{
+  "month_year": "2022-10",
+  "month_label_pt": "Outubro/2022",
+  "year_label_pt": "ate outubro/2022",
+  "group_start_label": "01/08/2022",
+  "year": 2022,
+  "distance_month_km": 124.4,
+  "distance_year_km": 530.0,
+  "distance_year_km_exact": 530.32,
+  "distance_since_group_km": 530.0,
+  "distance_since_group_km_exact": 530.32,
+  "earth_percent_since_group": 0.0132,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "78.7 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "912 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "5h08m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "9 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "20.1 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 124.4
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 530.32
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 36% do caminho Berlim → Praga (350 km entre os dois).",
+    "Daria para estacionar 10.367 onibus escolares bumper a bumper — 124 km de asfalto amarelo."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:07.963053Z"
+}

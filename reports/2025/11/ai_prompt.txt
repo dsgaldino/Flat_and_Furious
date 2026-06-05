@@ -1,0 +1,43 @@
+# AI Infographic Prompt — Novembro/2025
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 186 km
+• Total em 2025: 6144 km
+• Desde criacao do grupo: 12689 km (31.7% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 71.6 km/h
+• Escalador: Thamiris Ramos — 624 m
+• Mais tempo pedalando: Thamiris Ramos — 2h38m
+• Numero de pedaladas: Thamiris Ramos — 4 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 29.8 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 81% do caminho Buenos Aires → Montevideu (230 km entre os dois).
+2. Himalaia na conta: 1.556 m de ganho — equivalente a 0,18 ascensoes ao K2.
+
+RANKING DO MES (km):
+1. Thamiris Ramos — 71 km
+2. Rodrigo Bonilha — 59 km
+3. Diego Galdino — 37 km
+4. Jair de Souza Junior — 20 km
+5. Jonathan Machado — 0 km
+6. Vinicius Cainelli — 0 km
+
+RANKING EM 2025 (km):
+1. Rodrigo Bonilha — 1877 km
+2. Diego Galdino — 1202 km
+3. Thamiris Ramos — 1192 km
+4. Jair de Souza Junior — 1046 km
+5. Vinicius Cainelli — 827 km
+6. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2025/11/infographic.png

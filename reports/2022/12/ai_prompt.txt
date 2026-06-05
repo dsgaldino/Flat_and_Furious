@@ -1,0 +1,35 @@
+# AI Infographic Prompt — Dezembro/2022
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 15 km
+• Total em 2022: 667 km
+• Desde criacao do grupo: 667 km (1.7% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 45.4 km/h
+• Escalador: Thamiris Ramos — 106 m
+• Mais tempo pedalando: Thamiris Ramos — 0h40m
+• Numero de pedaladas: Thamiris Ramos — 1 pedaladas
+• Pedal mais longo: Thamiris Ramos — 15.2 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 4% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).
+2. Subida acumulada de 106 m — daria para escalar o Monte Fuji 0,0 vezes.
+
+RANKING DO MES (km):
+1. Thamiris Ramos — 15 km
+2. Jonathan Machado — 0 km
+
+RANKING EM 2022 (km):
+1. Thamiris Ramos — 667 km
+2. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2022/12/infographic.png

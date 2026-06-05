@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from flatfurious.report.monthly import report_dir_for_month
+from flatfurious.report.monthly import report_dir_for_month, report_relative_path
 
 _HIGHLIGHT_LABELS = {
     "maior_distancia": "Maior distancia",
@@ -205,7 +205,7 @@ Negative prompt: blurry illegible text, dark theme, mountains, motorcycles, wate
         f"=== BLOCO DE DADOS (PT — conferencia de numeros) ===\n\n"
         f"{data_block}\n\n"
         f"=== DICA ===\n"
-        f"Anexe reports/{summary['month_year']}/infographic.png como referencia de layout. "
+        f"Anexe reports/{report_relative_path(summary['month_year'])}/infographic.png como referencia de layout. "
         f"Para texto 100% correto, sobreponha numeros no Canva/Figma usando o bloco de dados acima.\n"
     )
 

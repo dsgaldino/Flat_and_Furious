@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Janeiro/2025
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 117 km
+• Total em 2025: 117 km
+• Desde criacao do grupo: 6662 km (16.6% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Rodrigo Bonilha — 65.4 km/h
+• Escalador: Rodrigo Bonilha — 709 m
+• Mais tempo pedalando: Rodrigo Bonilha — 2h52m
+• Numero de pedaladas: Rodrigo Bonilha — 3 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 33.6 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 27% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).
+2. Um pedestre precisaria de 156.267 passos para o mesmo percurso.
+
+RANKING DO MES (km):
+1. Rodrigo Bonilha — 82 km
+2. Thamiris Ramos — 35 km
+3. Diego Galdino — 0 km
+4. Jair de Souza Junior — 0 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2025 (km):
+1. Rodrigo Bonilha — 82 km
+2. Thamiris Ramos — 35 km
+3. Diego Galdino — 0 km
+4. Jair de Souza Junior — 0 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2025/01/infographic.png

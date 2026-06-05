@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Maio/2024
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 471 km
+• Total em 2024: 1421 km
+• Desde criacao do grupo: 4647 km (11.6% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 44.4 km/h
+• Escalador: Jair de Souza Junior — 362 m
+• Mais tempo pedalando: Jair de Souza Junior — 9h51m
+• Numero de pedaladas: Jair de Souza Junior — 9 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 45.6 km
+
+CURIOSIDADES:
+1. Com 471 km, o pelotao faria Londres → Paris (1,4x; trecho de 344 km).
+2. Subida acumulada de 798 m — daria para escalar o Monte Fuji 0,2 vezes.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 231 km
+2. Rodrigo Bonilha — 161 km
+3. Thamiris Ramos — 78 km
+4. Diego Galdino — 0 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2024 (km):
+1. Thamiris Ramos — 446 km
+2. Jair de Souza Junior — 444 km
+3. Rodrigo Bonilha — 297 km
+4. Diego Galdino — 234 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2024/05/infographic.png

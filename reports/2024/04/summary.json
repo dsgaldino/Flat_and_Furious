@@ -1,0 +1,101 @@
+{
+  "month_year": "2024-04",
+  "month_label_pt": "Abril/2024",
+  "year_label_pt": "ate abril/2024",
+  "group_start_label": "01/08/2022",
+  "year": 2024,
+  "distance_month_km": 170.0,
+  "distance_year_km": 950.0,
+  "distance_year_km_exact": 950.5,
+  "distance_since_group_km": 4176.0,
+  "distance_since_group_km_exact": 4175.96,
+  "earth_percent_since_group": 0.1042,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "50.8 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "171 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "5h01m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "4 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "48.2 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 121.91
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 48.09
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 368.01
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 233.89
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 212.89
+    },
+    {
+      "rank": 4,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 135.71
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 37% do caminho Oslo → Bergen (463 km entre os dois).",
+    "A terna-artica e a campea de migracao (~96 mil km/ano). Neste mes o pelotao cobriu o equivalente a 0,0 meses de voo dela."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:20.767874Z"
+}

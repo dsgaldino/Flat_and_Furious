@@ -1,0 +1,43 @@
+# AI Infographic Prompt — Setembro/2025
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 210 km
+• Total em 2025: 5938 km
+• Desde criacao do grupo: 12483 km (31.1% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Vinicius Cainelli — 41.2 km/h
+• Escalador: Jair de Souza Junior — 136 m
+• Mais tempo pedalando: Jair de Souza Junior — 2h42m
+• Numero de pedaladas: Thamiris Ramos — 1 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 65.6 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 39% do caminho Cidade do Mexico → Guadalajara (540 km entre os dois).
+2. Subida acumulada de 427 m — daria para escalar o Monte Fuji 0,1 vezes.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 66 km
+2. Rodrigo Bonilha — 65 km
+3. Vinicius Cainelli — 64 km
+4. Thamiris Ramos — 15 km
+5. Diego Galdino — 0 km
+6. Jonathan Machado — 0 km
+
+RANKING EM 2025 (km):
+1. Rodrigo Bonilha — 1819 km
+2. Diego Galdino — 1165 km
+3. Thamiris Ramos — 1121 km
+4. Jair de Souza Junior — 1006 km
+5. Vinicius Cainelli — 827 km
+6. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2025/09/infographic.png

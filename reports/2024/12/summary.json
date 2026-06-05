@@ -1,0 +1,101 @@
+{
+  "month_year": "2024-12",
+  "month_label_pt": "Dezembro/2024",
+  "year_label_pt": "2024",
+  "group_start_label": "01/08/2022",
+  "year": 2024,
+  "distance_month_km": 276.3,
+  "distance_year_km": 3319.0,
+  "distance_year_km_exact": 3319.38,
+  "distance_since_group_km": 6545.0,
+  "distance_since_group_km_exact": 6544.84,
+  "earth_percent_since_group": 0.1633,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "80.4 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "2148 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "8h34m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "9 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "50.3 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 230.28
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 46.02
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 1345.05
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 1188.66
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 523.07
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 262.6
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 79% do caminho Berlim → Praga (350 km entre os dois).",
+    "Seriam 2.402.609 latas de refrigerante em fila no acostamento."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:26.386816Z"
+}

@@ -1,0 +1,71 @@
+{
+  "month_year": "2023-04",
+  "month_label_pt": "Abril/2023",
+  "year_label_pt": "ate abril/2023",
+  "group_start_label": "01/08/2022",
+  "year": 2023,
+  "distance_month_km": 18.45,
+  "distance_year_km": 138.0,
+  "distance_year_km_exact": 137.87,
+  "distance_since_group_km": 805.0,
+  "distance_since_group_km_exact": 805.01,
+  "earth_percent_since_group": 0.0201,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "32.4 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "32 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "1h07m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "1 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "18.4 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 18.45
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 137.87
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 4% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).",
+    "O pelotao rodou o equivalente a 0,4 maratonas oficiais."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:12.179972Z"
+}

@@ -1,0 +1,131 @@
+{
+  "month_year": "2026-05",
+  "month_label_pt": "Maio/2026",
+  "year_label_pt": "ate maio/2026",
+  "group_start_label": "01/08/2022",
+  "year": 2026,
+  "distance_month_km": 1438.53,
+  "distance_year_km": 4506.0,
+  "distance_year_km_exact": 4506.1,
+  "distance_since_group_km": 17221.0,
+  "distance_since_group_km_exact": 17221.3,
+  "earth_percent_since_group": 0.4297,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Vinicius Cainelli",
+      "value": "49.3 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Carlos Prado",
+      "value": "616 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Vinicius Cainelli",
+      "value": "14h30m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "6 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "73.3 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 250.93
+    },
+    {
+      "rank": 2,
+      "athlete": "Carlos Prado",
+      "distance_km": 239.77
+    },
+    {
+      "rank": 3,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 231.42
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 223.4
+    },
+    {
+      "rank": 5,
+      "athlete": "Laetitia Gerber",
+      "distance_km": 222.25
+    },
+    {
+      "rank": 6,
+      "athlete": "Diego Galdino",
+      "distance_km": 160.1
+    },
+    {
+      "rank": 7,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 110.66
+    },
+    {
+      "rank": 8,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 1031.72
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 877.33
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 845.13
+    },
+    {
+      "rank": 4,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 657.67
+    },
+    {
+      "rank": 5,
+      "athlete": "Laetitia Gerber",
+      "distance_km": 539.22
+    },
+    {
+      "rank": 6,
+      "athlete": "Carlos Prado",
+      "distance_km": 323.61
+    },
+    {
+      "rank": 7,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 231.42
+    },
+    {
+      "rank": 8,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "Com 1439 km, o pelotao faria Londres → Paris (4,2x; trecho de 344 km).",
+    "Um pedestre precisaria de 1.918.040 passos para o mesmo percurso."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:38.639358Z"
+}

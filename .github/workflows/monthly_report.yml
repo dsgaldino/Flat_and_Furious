@@ -53,10 +53,16 @@ jobs:
             reports/**
             site/public/**
 
+      - name: Report folder path
+        id: reportdir
+        run: |
+          M="${{ steps.month.outputs.value }}"
+          echo "path=reports/${M%-*}/${M#*-}/" >> $GITHUB_OUTPUT
+
       - name: Upload WhatsApp artifacts
         uses: actions/upload-artifact@v4
         with:
           name: whatsapp-${{ steps.month.outputs.value }}
           path: |
-            reports/${{ steps.month.outputs.value }}/whatsapp.txt
-            reports/${{ steps.month.outputs.value }}/infographic.png
+            ${{ steps.reportdir.outputs.path }}whatsapp.txt
+            ${{ steps.reportdir.outputs.path }}infographic.png

@@ -1,0 +1,101 @@
+{
+  "month_year": "2025-03",
+  "month_label_pt": "Marco/2025",
+  "year_label_pt": "ate marco/2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 127.68,
+  "distance_year_km": 616.0,
+  "distance_year_km_exact": 616.01,
+  "distance_since_group_km": 7161.0,
+  "distance_since_group_km_exact": 7160.85,
+  "earth_percent_since_group": 0.1787,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "59.7 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "279 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "2h29m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "3 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "30.7 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 71.91
+    },
+    {
+      "rank": 2,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 55.77
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 294.24
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 208.58
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 81.67
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 31.52
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 36% do caminho Berlim → Praga (350 km entre os dois).",
+    "Foram 5 pedaladas — media de 25,5 km por saida."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:28.493844Z"
+}

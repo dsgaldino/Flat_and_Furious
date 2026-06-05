@@ -9,18 +9,11 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from flatfurious.config import reports_dir, site_base_url, site_public_dir, site_templates_dir
-from flatfurious.report.monthly import build_summary
+from flatfurious.report.monthly import build_summary, list_report_months, report_dir_for_month
 
 
 def _list_report_months() -> list[str]:
-    root = reports_dir()
-    if not root.exists():
-        return []
-    months = []
-    for p in sorted(root.iterdir()):
-        if p.is_dir() and (p / "summary.json").exists():
-            months.append(p.name)
-    return months
+    return list_report_months()
 
 
 def _sync_template_assets(templates: Path, public: Path) -> None:
@@ -77,20 +70,21 @@ def build_site(latest_month: str | None = None) -> Path:
 
     summaries: dict[str, dict] = {}
     for month in months:
-        summary_path = reports_dir() / month / "summary.json"
+        report_dir = report_dir_for_month(month)
+        summary_path = report_dir / "summary.json"
         summary = json.loads(summary_path.read_text(encoding="utf-8"))
         summaries[month] = summary
 
         month_dir = archive_dir / month
         month_dir.mkdir(parents=True, exist_ok=True)
 
-        whatsapp_path = reports_dir() / month / "whatsapp.txt"
+        whatsapp_path = report_dir / "whatsapp.txt"
         whatsapp_text = ""
         if whatsapp_path.exists():
             whatsapp_text = whatsapp_path.read_text(encoding="utf-8")
 
         infographic_rel = None
-        infographic_src = reports_dir() / month / "infographic.png"
+        infographic_src = report_dir / "infographic.png"
         if infographic_src.exists():
             shutil.copy2(infographic_src, month_dir / "infographic.png")
             infographic_rel = "infographic.png"

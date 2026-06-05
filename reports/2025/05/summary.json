@@ -1,0 +1,116 @@
+{
+  "month_year": "2025-05",
+  "month_label_pt": "Maio/2025",
+  "year_label_pt": "ate maio/2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 1279.55,
+  "distance_year_km": 2239.0,
+  "distance_year_km_exact": 2238.59,
+  "distance_since_group_km": 8783.0,
+  "distance_since_group_km_exact": 8783.43,
+  "earth_percent_since_group": 0.2192,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "48.2 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "583 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "15h00m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "9 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Diego Galdino",
+      "value": "60.8 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 351.53
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 308.51
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 232.85
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 206.08
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 180.58
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 767.35
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 491.85
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 405.62
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 393.19
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 180.58
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [
+    {
+      "nome": "Vinicius Cainelli",
+      "group_join_date": "01/05/2025"
+    }
+  ],
+  "curiosities": [
+    "Com 1280 km, o pelotao faria Rio de Janeiro → Sao Paulo (3,0x; trecho de 429 km).",
+    "Uma fila de formigas (1 cm cada) com 127.955.000 individuos ia de Enschede ate passar a fronteira belga — e ainda sobra."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:29.894551Z"
+}

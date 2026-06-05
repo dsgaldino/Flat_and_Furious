@@ -1,0 +1,24 @@
+# AI Infographic Prompt — Fevereiro/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 0 km
+• Total em 2023: 119 km
+• Desde criacao do grupo: 787 km (2.0% de uma volta ao mundo)
+
+RANKING DO MES (km):
+1. Jonathan Machado — 0 km
+2. Thamiris Ramos — 0 km
+
+RANKING EM 2023 (km):
+1. Thamiris Ramos — 119 km
+2. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Curiosidades aguardam km do mes (Ride/VirtualRide). Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/02/infographic.png

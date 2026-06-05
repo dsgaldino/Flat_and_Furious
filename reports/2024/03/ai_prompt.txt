@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Marco/2024
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 260 km
+• Total em 2024: 780 km
+• Desde criacao do grupo: 4006 km (10.0% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 41.2 km/h
+• Escalador: Diego Galdino — 139 m
+• Mais tempo pedalando: Diego Galdino — 4h14m
+• Numero de pedaladas: Jair de Souza Junior — 4 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 32.3 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 76% do caminho Londres → Paris (344 km entre os dois).
+2. Uma cegonha-branca percorre ~20 mil km por ano nas migracoes. O grupo fez 1% desse percurso anual so em um mes.
+
+RANKING DO MES (km):
+1. Diego Galdino — 82 km
+2. Rodrigo Bonilha — 73 km
+3. Jair de Souza Junior — 52 km
+4. Thamiris Ramos — 52 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2024 (km):
+1. Thamiris Ramos — 368 km
+2. Diego Galdino — 234 km
+3. Jair de Souza Junior — 91 km
+4. Rodrigo Bonilha — 88 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2024/03/infographic.png

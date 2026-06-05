@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Setembro/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 306 km
+• Total em 2023: 1731 km
+• Desde criacao do grupo: 2399 km (6.0% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 64.2 km/h
+• Escalador: Jair de Souza Junior — 387 m
+• Mais tempo pedalando: Jair de Souza Junior — 11h19m
+• Numero de pedaladas: Jair de Souza Junior — 9 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 101.7 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 87% do caminho Berlim → Praga (350 km entre os dois).
+2. Um pedestre precisaria de 407.867 passos para o mesmo percurso.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 253 km
+2. Rodrigo Bonilha — 30 km
+3. Diego Galdino — 23 km
+4. Jonathan Machado — 0 km
+5. Thamiris Ramos — 0 km
+
+RANKING EM 2023 (km):
+1. Jair de Souza Junior — 584 km
+2. Thamiris Ramos — 481 km
+3. Rodrigo Bonilha — 443 km
+4. Diego Galdino — 224 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/09/infographic.png

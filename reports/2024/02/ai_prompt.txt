@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Fevereiro/2024
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 54 km
+• Total em 2024: 521 km
+• Desde criacao do grupo: 3746 km (9.3% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 65.2 km/h
+• Escalador: Thamiris Ramos — 474 m
+• Mais tempo pedalando: Thamiris Ramos — 2h00m
+• Numero de pedaladas: Jair de Souza Junior — 4 pedaladas
+• Pedal mais longo: Thamiris Ramos — 31.7 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 25% do caminho Cairo → Alexandria (220 km entre os dois).
+2. Daria para estacionar 4.524 onibus escolares bumper a bumper — 54 km de asfalto amarelo.
+
+RANKING DO MES (km):
+1. Thamiris Ramos — 54 km
+2. Diego Galdino — 0 km
+3. Jair de Souza Junior — 0 km
+4. Jonathan Machado — 0 km
+5. Rodrigo Bonilha — 0 km
+
+RANKING EM 2024 (km):
+1. Thamiris Ramos — 316 km
+2. Diego Galdino — 152 km
+3. Jair de Souza Junior — 39 km
+4. Rodrigo Bonilha — 15 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2024/02/infographic.png

@@ -1,0 +1,71 @@
+{
+  "month_year": "2022-12",
+  "month_label_pt": "Dezembro/2022",
+  "year_label_pt": "2022",
+  "group_start_label": "01/08/2022",
+  "year": 2022,
+  "distance_month_km": 15.24,
+  "distance_year_km": 667.0,
+  "distance_year_km_exact": 667.14,
+  "distance_since_group_km": 667.0,
+  "distance_since_group_km_exact": 667.14,
+  "earth_percent_since_group": 0.0166,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "45.4 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "106 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "0h40m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "1 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "15.2 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 15.24
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 667.14
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 4% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).",
+    "Subida acumulada de 106 m — daria para escalar o Monte Fuji 0,0 vezes."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:09.375165Z"
+}

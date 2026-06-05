@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Setembro/2024
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 382 km
+• Total em 2024: 2765 km
+• Desde criacao do grupo: 5991 km (14.9% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Rodrigo Bonilha — 113.3 km/h
+• Escalador: Rodrigo Bonilha — 301 m
+• Mais tempo pedalando: Jair de Souza Junior — 7h46m
+• Numero de pedaladas: Jair de Souza Junior — 5 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 51.7 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 65% do caminho Mumbai → Goa (590 km entre os dois).
+2. O pelotao rodou o equivalente a 9,0 maratonas oficiais.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 199 km
+2. Rodrigo Bonilha — 182 km
+3. Diego Galdino — 0 km
+4. Jonathan Machado — 0 km
+5. Thamiris Ramos — 0 km
+
+RANKING EM 2024 (km):
+1. Jair de Souza Junior — 1282 km
+2. Rodrigo Bonilha — 772 km
+3. Thamiris Ramos — 477 km
+4. Diego Galdino — 234 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2024/09/infographic.png

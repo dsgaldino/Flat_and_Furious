@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Agosto/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 322 km
+• Total em 2023: 1426 km
+• Desde criacao do grupo: 2093 km (5.2% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 41.2 km/h
+• Escalador: Jair de Souza Junior — 263 m
+• Mais tempo pedalando: Jair de Souza Junior — 6h17m
+• Numero de pedaladas: Jair de Souza Junior — 8 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 39.2 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 37% do caminho Sydney → Melbourne (878 km entre os dois).
+2. Seriam 2.803.652 latas de refrigerante em fila no acostamento.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 145 km
+2. Rodrigo Bonilha — 129 km
+3. Thamiris Ramos — 31 km
+4. Diego Galdino — 18 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2023 (km):
+1. Thamiris Ramos — 481 km
+2. Rodrigo Bonilha — 413 km
+3. Jair de Souza Junior — 331 km
+4. Diego Galdino — 200 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/08/infographic.png

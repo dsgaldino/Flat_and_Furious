@@ -1,0 +1,101 @@
+{
+  "month_year": "2024-06",
+  "month_label_pt": "Junho/2024",
+  "year_label_pt": "ate junho/2024",
+  "group_start_label": "01/08/2022",
+  "year": 2024,
+  "distance_month_km": 206.28,
+  "distance_year_km": 1627.0,
+  "distance_year_km_exact": 1627.45,
+  "distance_since_group_km": 4853.0,
+  "distance_since_group_km_exact": 4852.91,
+  "earth_percent_since_group": 0.1211,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "47.2 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "322 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "7h03m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "6 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "61.3 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 175.64
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 30.64
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 619.64
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 477.05
+    },
+    {
+      "rank": 3,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 296.87
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 233.89
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 33% do caminho Madrid → Barcelona (621 km entre os dois).",
+    "Com 356 m de subida, o pelotao subiria o Everest 0,04 vezes (sem oxigenio extra)."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:22.169167Z"
+}

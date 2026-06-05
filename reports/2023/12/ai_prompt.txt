@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Dezembro/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 129 km
+• Total em 2023: 2558 km
+• Desde criacao do grupo: 3225 km (8.1% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 73.1 km/h
+• Escalador: Rodrigo Bonilha — 215 m
+• Mais tempo pedalando: Rodrigo Bonilha — 4h44m
+• Numero de pedaladas: Rodrigo Bonilha — 3 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 48.0 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 36% do caminho Nova York → Boston (360 km entre os dois).
+2. Dos 5 treinos do mes, 2 foram no fim de semana.
+
+RANKING DO MES (km):
+1. Rodrigo Bonilha — 106 km
+2. Thamiris Ramos — 23 km
+3. Diego Galdino — 0 km
+4. Jair de Souza Junior — 0 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2023 (km):
+1. Rodrigo Bonilha — 817 km
+2. Jair de Souza Junior — 810 km
+3. Thamiris Ramos — 606 km
+4. Diego Galdino — 325 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/12/infographic.png

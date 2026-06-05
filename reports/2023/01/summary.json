@@ -1,0 +1,71 @@
+{
+  "month_year": "2023-01",
+  "month_label_pt": "Janeiro/2023",
+  "year_label_pt": "ate janeiro/2023",
+  "group_start_label": "01/08/2022",
+  "year": 2023,
+  "distance_month_km": 119.42,
+  "distance_year_km": 119.0,
+  "distance_year_km_exact": 119.42,
+  "distance_since_group_km": 787.0,
+  "distance_since_group_km_exact": 786.56,
+  "earth_percent_since_group": 0.0196,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "57.9 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "929 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "5h30m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "8 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "27.7 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 119.42
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 119.42
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 24% do caminho Amsterdam → Paris (504 km entre os dois).",
+    "Subida acumulada de 929 m — daria para escalar o Monte Fuji 0,2 vezes."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:10.078470Z"
+}

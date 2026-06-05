@@ -1,0 +1,48 @@
+{
+  "month_year": "2023-03",
+  "month_label_pt": "Marco/2023",
+  "year_label_pt": "ate marco/2023",
+  "group_start_label": "01/08/2022",
+  "year": 2023,
+  "distance_month_km": 0.0,
+  "distance_year_km": 119.0,
+  "distance_year_km_exact": 119.42,
+  "distance_since_group_km": 787.0,
+  "distance_since_group_km_exact": 786.56,
+  "earth_percent_since_group": 0.0196,
+  "month_highlights": {
+    "mais_rapido": null,
+    "escalador": null,
+    "mais_tempo": null,
+    "mais_pedaladas": null,
+    "pedal_mais_longo": null
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 119.42
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:11.476284Z"
+}

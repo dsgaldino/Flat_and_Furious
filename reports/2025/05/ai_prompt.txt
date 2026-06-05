@@ -1,0 +1,47 @@
+# AI Infographic Prompt — Maio/2025
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+BOAS-VINDAS AO PELOTAO:
+• Vinicius Cainelli
+
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 1280 km
+• Total em 2025: 2239 km
+• Desde criacao do grupo: 8783 km (21.9% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 48.2 km/h
+• Escalador: Rodrigo Bonilha — 583 m
+• Mais tempo pedalando: Rodrigo Bonilha — 15h00m
+• Numero de pedaladas: Rodrigo Bonilha — 9 pedaladas
+• Pedal mais longo: Diego Galdino — 60.8 km
+
+CURIOSIDADES:
+1. Com 1280 km, o pelotao faria Rio de Janeiro → Sao Paulo (3,0x; trecho de 429 km).
+2. Uma fila de formigas (1 cm cada) com 127.955.000 individuos ia de Enschede ate passar a fronteira belga — e ainda sobra.
+
+RANKING DO MES (km):
+1. Rodrigo Bonilha — 352 km
+2. Diego Galdino — 309 km
+3. Thamiris Ramos — 233 km
+4. Jair de Souza Junior — 206 km
+5. Vinicius Cainelli — 181 km
+6. Jonathan Machado — 0 km
+
+RANKING EM 2025 (km):
+1. Rodrigo Bonilha — 767 km
+2. Thamiris Ramos — 492 km
+3. Jair de Souza Junior — 406 km
+4. Diego Galdino — 393 km
+5. Vinicius Cainelli — 181 km
+6. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2025/05/infographic.png

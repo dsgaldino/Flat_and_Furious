@@ -1,0 +1,111 @@
+{
+  "month_year": "2025-10",
+  "month_label_pt": "Outubro/2025",
+  "year_label_pt": "ate outubro/2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 20.06,
+  "distance_year_km": 5958.0,
+  "distance_year_km_exact": 5957.8,
+  "distance_since_group_km": 12503.0,
+  "distance_since_group_km_exact": 12502.64,
+  "earth_percent_since_group": 0.312,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "39.0 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "32 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "1h06m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "2 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "20.1 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 20.06
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 3,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 6,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 1818.72
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 1165.12
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 1120.83
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 1026.06
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 827.07
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 9% do caminho Cairo → Alexandria (220 km entre os dois).",
+    "O pelotao rodou o equivalente a 0,5 maratonas oficiais."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:33.605742Z"
+}

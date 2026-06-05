@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Agosto/2024
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 537 km
+• Total em 2024: 2384 km
+• Desde criacao do grupo: 5609 km (14.0% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Rodrigo Bonilha — 79.3 km/h
+• Escalador: Jair de Souza Junior — 469 m
+• Mais tempo pedalando: Jair de Souza Junior — 12h58m
+• Numero de pedaladas: Jair de Souza Junior — 11 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 46.1 km
+
+CURIOSIDADES:
+1. Com 537 km, o pelotao faria Nova York → Boston (1,5x; trecho de 360 km).
+2. Fuji + Everest + K2 empilhados mentalmente: 0,04 voltas completas com a subida do mes.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 326 km
+2. Rodrigo Bonilha — 212 km
+3. Diego Galdino — 0 km
+4. Jonathan Machado — 0 km
+5. Thamiris Ramos — 0 km
+
+RANKING EM 2024 (km):
+1. Jair de Souza Junior — 1083 km
+2. Rodrigo Bonilha — 589 km
+3. Thamiris Ramos — 477 km
+4. Diego Galdino — 234 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2024/08/infographic.png

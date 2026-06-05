@@ -1,0 +1,111 @@
+{
+  "month_year": "2025-11",
+  "month_label_pt": "Novembro/2025",
+  "year_label_pt": "ate novembro/2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 186.47,
+  "distance_year_km": 6144.0,
+  "distance_year_km_exact": 6144.27,
+  "distance_since_group_km": 12689.0,
+  "distance_since_group_km_exact": 12689.11,
+  "earth_percent_since_group": 0.3166,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "71.6 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "624 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "2h38m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "4 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "29.8 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 70.97
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 58.69
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 37.22
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 19.59
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 6,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 1877.41
+    },
+    {
+      "rank": 2,
+      "athlete": "Diego Galdino",
+      "distance_km": 1202.34
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 1191.8
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 1045.65
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 827.07
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 81% do caminho Buenos Aires → Montevideu (230 km entre os dois).",
+    "Himalaia na conta: 1.556 m de ganho — equivalente a 0,18 ascensoes ao K2."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:34.324862Z"
+}

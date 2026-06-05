@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Outubro/2024
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 68 km
+• Total em 2024: 2833 km
+• Desde criacao do grupo: 6059 km (15.1% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 42.3 km/h
+• Escalador: Rodrigo Bonilha — 40 m
+• Mais tempo pedalando: Rodrigo Bonilha — 1h31m
+• Numero de pedaladas: Rodrigo Bonilha — 2 pedaladas
+• Pedal mais longo: Jair de Souza Junior — 27.2 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 16% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).
+2. Em garrafas Grolsch de 25 cm: 271.960 unidades em fila indiana.
+
+RANKING DO MES (km):
+1. Rodrigo Bonilha — 34 km
+2. Jair de Souza Junior — 34 km
+3. Diego Galdino — 0 km
+4. Jonathan Machado — 0 km
+5. Thamiris Ramos — 0 km
+
+RANKING EM 2024 (km):
+1. Jair de Souza Junior — 1316 km
+2. Rodrigo Bonilha — 806 km
+3. Thamiris Ramos — 477 km
+4. Diego Galdino — 234 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2024/10/infographic.png

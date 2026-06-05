@@ -1,0 +1,101 @@
+{
+  "month_year": "2024-10",
+  "month_label_pt": "Outubro/2024",
+  "year_label_pt": "ate outubro/2024",
+  "group_start_label": "01/08/2022",
+  "year": 2024,
+  "distance_month_km": 67.99,
+  "distance_year_km": 2833.0,
+  "distance_year_km_exact": 2833.14,
+  "distance_since_group_km": 6059.0,
+  "distance_since_group_km_exact": 6058.6,
+  "earth_percent_since_group": 0.1512,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "42.3 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "40 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "1h31m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "2 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "27.2 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 34.22
+    },
+    {
+      "rank": 2,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 33.77
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 1316.27
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 805.93
+    },
+    {
+      "rank": 3,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 477.05
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 233.89
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 16% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).",
+    "Em garrafas Grolsch de 25 cm: 271.960 unidades em fila indiana."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:24.975652Z"
+}

@@ -1,0 +1,101 @@
+{
+  "month_year": "2025-02",
+  "month_label_pt": "Fevereiro/2025",
+  "year_label_pt": "ate fevereiro/2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 371.13,
+  "distance_year_km": 488.0,
+  "distance_year_km_exact": 488.33,
+  "distance_since_group_km": 7033.0,
+  "distance_since_group_km_exact": 7033.17,
+  "earth_percent_since_group": 0.1755,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "82.3 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "1423 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "6h53m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "8 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "33.4 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 173.29
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 140.42
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 31.52
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 25.9
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 222.33
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 208.58
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 31.52
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 25.9
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 63% do caminho Mumbai → Goa (590 km entre os dois).",
+    "Com 16h em movimento, daria pra beber 32 garrafas de Bavaria — uma a cada meia hora de estrada."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:27.796476Z"
+}

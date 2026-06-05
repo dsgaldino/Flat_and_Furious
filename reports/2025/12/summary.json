@@ -1,0 +1,111 @@
+{
+  "month_year": "2025-12",
+  "month_label_pt": "Dezembro/2025",
+  "year_label_pt": "2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 26.09,
+  "distance_year_km": 6170.0,
+  "distance_year_km_exact": 6170.36,
+  "distance_since_group_km": 12715.0,
+  "distance_since_group_km_exact": 12715.2,
+  "earth_percent_since_group": 0.3173,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "72.1 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "209 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "0h34m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "1 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "13.3 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 13.31
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 12.78
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 6,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 1877.41
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 1204.58
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 1202.34
+    },
+    {
+      "rank": 4,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 1058.96
+    },
+    {
+      "rank": 5,
+      "athlete": "Vinicius Cainelli",
+      "distance_km": 827.07
+    },
+    {
+      "rank": 6,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 7% do caminho Berlim → Praga (350 km entre os dois).",
+    "O pelotao rodou o equivalente a 0,6 maratonas oficiais."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:35.032289Z"
+}

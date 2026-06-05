@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Outubro/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 236 km
+• Total em 2023: 1968 km
+• Desde criacao do grupo: 2635 km (6.6% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Jair de Souza Junior — 37.9 km/h
+• Escalador: Rodrigo Bonilha — 126 m
+• Mais tempo pedalando: Jair de Souza Junior — 4h10m
+• Numero de pedaladas: Jair de Souza Junior — 4 pedaladas
+• Pedal mais longo: Rodrigo Bonilha — 50.4 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 55% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).
+2. Com 13h em movimento, daria pra beber 25 garrafas de Bavaria — uma a cada meia hora de estrada.
+
+RANKING DO MES (km):
+1. Rodrigo Bonilha — 80 km
+2. Jair de Souza Junior — 73 km
+3. Diego Galdino — 42 km
+4. Thamiris Ramos — 41 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2023 (km):
+1. Jair de Souza Junior — 657 km
+2. Rodrigo Bonilha — 523 km
+3. Thamiris Ramos — 523 km
+4. Diego Galdino — 265 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/10/infographic.png

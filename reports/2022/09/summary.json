@@ -1,0 +1,71 @@
+{
+  "month_year": "2022-09",
+  "month_label_pt": "Setembro/2022",
+  "year_label_pt": "ate setembro/2022",
+  "group_start_label": "01/08/2022",
+  "year": 2022,
+  "distance_month_km": 201.68,
+  "distance_year_km": 406.0,
+  "distance_year_km_exact": 405.92,
+  "distance_since_group_km": 406.0,
+  "distance_since_group_km_exact": 405.92,
+  "earth_percent_since_group": 0.0101,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "38.3 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "480 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "9h57m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "9 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "31.7 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 201.68
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 405.92
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 88% do caminho Buenos Aires → Montevideu (230 km entre os dois).",
+    "Uma fila de formigas (1 cm cada) com 20.168.000 individuos ia de Enschede ate passar a fronteira belga — e ainda sobra."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:07.258638Z"
+}

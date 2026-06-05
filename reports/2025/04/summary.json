@@ -1,0 +1,101 @@
+{
+  "month_year": "2025-04",
+  "month_label_pt": "Abril/2025",
+  "year_label_pt": "ate abril/2025",
+  "group_start_label": "01/08/2022",
+  "year": 2025,
+  "distance_month_km": 343.03,
+  "distance_year_km": 959.0,
+  "distance_year_km_exact": 959.04,
+  "distance_since_group_km": 7504.0,
+  "distance_since_group_km_exact": 7503.88,
+  "earth_percent_since_group": 0.1872,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Diego Galdino",
+      "value": "41.0 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "197 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "5h34m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "5 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Diego Galdino",
+      "value": "32.9 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 121.58
+    },
+    {
+      "rank": 2,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 117.87
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 53.16
+    },
+    {
+      "rank": 4,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 50.42
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 415.82
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 259.0
+    },
+    {
+      "rank": 3,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 199.54
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 84.68
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "Com 343 km, o pelotao faria Buenos Aires → Montevideu (1,5x; trecho de 230 km).",
+    "Dos 13 treinos do mes, 6 foram no fim de semana."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:29.190375Z"
+}

@@ -1,0 +1,80 @@
+{
+  "month_year": "2022-08",
+  "month_label_pt": "Agosto/2022",
+  "year_label_pt": "ate agosto/2022",
+  "group_start_label": "01/08/2022",
+  "year": 2022,
+  "distance_month_km": 204.24,
+  "distance_year_km": 204.0,
+  "distance_year_km_exact": 204.24,
+  "distance_since_group_km": 204.0,
+  "distance_since_group_km_exact": 204.24,
+  "earth_percent_since_group": 0.0051,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Thamiris Ramos",
+      "value": "37.4 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Thamiris Ramos",
+      "value": "468 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Thamiris Ramos",
+      "value": "10h27m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Thamiris Ramos",
+      "value": "11 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Thamiris Ramos",
+      "value": "29.0 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 204.24
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 204.24
+    },
+    {
+      "rank": 2,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [
+    {
+      "nome": "Thamiris Ramos",
+      "group_join_date": "01/08/2022"
+    },
+    {
+      "nome": "Jonathan Machado",
+      "group_join_date": "01/08/2022"
+    }
+  ],
+  "curiosities": [
+    "O pelotao percorreu 89% do caminho Buenos Aires → Montevideu (230 km entre os dois).",
+    "Dos 11 treinos do mes, 3 foram no fim de semana."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:06.552227Z"
+}

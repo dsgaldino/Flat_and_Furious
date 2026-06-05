@@ -1,0 +1,101 @@
+{
+  "month_year": "2023-09",
+  "month_label_pt": "Setembro/2023",
+  "year_label_pt": "ate setembro/2023",
+  "group_start_label": "01/08/2022",
+  "year": 2023,
+  "distance_month_km": 305.9,
+  "distance_year_km": 1731.0,
+  "distance_year_km_exact": 1731.41,
+  "distance_since_group_km": 2399.0,
+  "distance_since_group_km_exact": 2398.55,
+  "earth_percent_since_group": 0.0599,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "64.2 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "387 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "11h19m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "9 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "101.7 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 252.7
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 29.83
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 23.37
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 583.85
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 481.21
+    },
+    {
+      "rank": 3,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 442.62
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 223.73
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 87% do caminho Berlim → Praga (350 km entre os dois).",
+    "Um pedestre precisaria de 407.867 passos para o mesmo percurso."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:15.840343Z"
+}

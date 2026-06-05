@@ -1,0 +1,35 @@
+# AI Infographic Prompt — Abril/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 18 km
+• Total em 2023: 138 km
+• Desde criacao do grupo: 805 km (2.0% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 32.4 km/h
+• Escalador: Thamiris Ramos — 32 m
+• Mais tempo pedalando: Thamiris Ramos — 1h07m
+• Numero de pedaladas: Thamiris Ramos — 1 pedaladas
+• Pedal mais longo: Thamiris Ramos — 18.4 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 4% do caminho Rio de Janeiro → Sao Paulo (429 km entre os dois).
+2. O pelotao rodou o equivalente a 0,4 maratonas oficiais.
+
+RANKING DO MES (km):
+1. Thamiris Ramos — 18 km
+2. Jonathan Machado — 0 km
+
+RANKING EM 2023 (km):
+1. Thamiris Ramos — 138 km
+2. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/04/infographic.png

@@ -1,0 +1,41 @@
+# AI Infographic Prompt — Julho/2023
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 554 km
+• Total em 2023: 1103 km
+• Desde criacao do grupo: 1770 km (4.4% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Rodrigo Bonilha — 40.2 km/h
+• Escalador: Jair de Souza Junior — 351 m
+• Mais tempo pedalando: Jair de Souza Junior — 9h26m
+• Numero de pedaladas: Jair de Souza Junior — 11 pedaladas
+• Pedal mais longo: Diego Galdino — 58.2 km
+
+CURIOSIDADES:
+1. Com 554 km, o pelotao faria Enschede → Koln (3,1x; trecho de 180 km).
+2. Da para alinhar 588.989 pizzas de 30 cm, uma atras da outra.
+
+RANKING DO MES (km):
+1. Jair de Souza Junior — 186 km
+2. Rodrigo Bonilha — 150 km
+3. Thamiris Ramos — 118 km
+4. Diego Galdino — 99 km
+5. Jonathan Machado — 0 km
+
+RANKING EM 2023 (km):
+1. Thamiris Ramos — 450 km
+2. Rodrigo Bonilha — 284 km
+3. Jair de Souza Junior — 186 km
+4. Diego Galdino — 183 km
+5. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2023/07/infographic.png

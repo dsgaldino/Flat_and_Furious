@@ -1,0 +1,101 @@
+{
+  "month_year": "2024-07",
+  "month_label_pt": "Julho/2024",
+  "year_label_pt": "ate julho/2024",
+  "group_start_label": "01/08/2022",
+  "year": 2024,
+  "distance_month_km": 218.79,
+  "distance_year_km": 1846.0,
+  "distance_year_km_exact": 1846.24,
+  "distance_since_group_km": 5072.0,
+  "distance_since_group_km_exact": 5071.7,
+  "earth_percent_since_group": 0.1266,
+  "month_highlights": {
+    "mais_rapido": {
+      "athlete": "Jair de Souza Junior",
+      "value": "43.4 km/h",
+      "metric": ""
+    },
+    "escalador": {
+      "athlete": "Jair de Souza Junior",
+      "value": "277 m",
+      "metric": ""
+    },
+    "mais_tempo": {
+      "athlete": "Jair de Souza Junior",
+      "value": "5h57m",
+      "metric": ""
+    },
+    "mais_pedaladas": {
+      "athlete": "Jair de Souza Junior",
+      "value": "6 pedaladas",
+      "metric": ""
+    },
+    "pedal_mais_longo": {
+      "athlete": "Rodrigo Bonilha",
+      "value": "30.6 km",
+      "metric": ""
+    }
+  },
+  "ranking_month": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 137.83
+    },
+    {
+      "rank": 2,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 80.96
+    },
+    {
+      "rank": 3,
+      "athlete": "Diego Galdino",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 4,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    },
+    {
+      "rank": 5,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 0.0
+    }
+  ],
+  "ranking_year": [
+    {
+      "rank": 1,
+      "athlete": "Jair de Souza Junior",
+      "distance_km": 757.47
+    },
+    {
+      "rank": 2,
+      "athlete": "Thamiris Ramos",
+      "distance_km": 477.05
+    },
+    {
+      "rank": 3,
+      "athlete": "Rodrigo Bonilha",
+      "distance_km": 377.83
+    },
+    {
+      "rank": 4,
+      "athlete": "Diego Galdino",
+      "distance_km": 233.89
+    },
+    {
+      "rank": 5,
+      "athlete": "Jonathan Machado",
+      "distance_km": 0.0
+    }
+  ],
+  "new_members": [],
+  "curiosities": [
+    "O pelotao percorreu 63% do caminho Berlim → Praga (350 km entre os dois).",
+    "Himalaia na conta: 378 m de ganho — equivalente a 0,04 ascensoes ao K2."
+  ],
+  "status": "distance_only",
+  "generated_at": "2026-06-05T08:17:22.871730Z"
+}

@@ -1,0 +1,35 @@
+# AI Infographic Prompt — Novembro/2022
+# Relatorio parcial (distance_only)
+
+=== DADOS DISPONIVEIS ===
+
+DISTANCIAS DO GRUPO:
+• Distancia no mes: 122 km
+• Total em 2022: 652 km
+• Desde criacao do grupo: 652 km (1.6% de uma volta ao mundo)
+
+DESTAQUE DO MES:
+• Mais rapido: Thamiris Ramos — 77.4 km/h
+• Escalador: Thamiris Ramos — 1156 m
+• Mais tempo pedalando: Thamiris Ramos — 6h04m
+• Numero de pedaladas: Thamiris Ramos — 10 pedaladas
+• Pedal mais longo: Thamiris Ramos — 16.8 km
+
+CURIOSIDADES:
+1. O pelotao percorreu 35% do caminho Londres → Paris (344 km entre os dois).
+2. Uma cegonha-branca percorre ~20 mil km por ano nas migracoes. O grupo fez 1% desse percurso anual so em um mes.
+
+RANKING DO MES (km):
+1. Thamiris Ramos — 122 km
+2. Jonathan Machado — 0 km
+
+RANKING EM 2022 (km):
+1. Thamiris Ramos — 652 km
+2. Jonathan Machado — 0 km
+
+=== PENDENTE ===
+
+Infografico completo ainda nao preenchido nesta fase de validacao.
+
+=== DICA ===
+Quando o relatorio completo existir: reports/2022/11/infographic.png
