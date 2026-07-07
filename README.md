@@ -1,8 +1,11 @@
 # Flat & Furious
 
-[![Daily Strava sync](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/daily_sync.yml/badge.svg)](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/daily_sync.yml)
-[![Monthly report](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/monthly_report.yml/badge.svg)](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/monthly_report.yml)
-[![GitHub Pages](https://img.shields.io/badge/demo-live-8A2BE2?style=flat-square)](https://dsgaldino.github.io/Flat_and_Furious/)
+> **Archived (2026)** — Strava API access is no longer available for this project.  
+> GitHub Actions workflows are **disabled**. The repo remains public as a **portfolio reference** (CI/CD, OAuth design, static site generation).  
+> Live demo site may show historical data only.
+
+[![GitHub Pages](https://img.shields.io/badge/demo-historical-8A2BE2?style=flat-square)](https://dsgaldino.github.io/Flat_and_Furious/)
+[![Status](https://img.shields.io/badge/status-archived-inactive-lightgrey?style=flat-square)](https://github.com/dsgaldino/Flat_and_Furious)
 
 **End-to-end automation for a cycling group:** Strava OAuth → daily activity sync → monthly rankings → static site → WhatsApp-ready reports.
 
