@@ -4,7 +4,7 @@
 
 1. Acesse https://github.com/new
 2. Nome: `Flat_and_Furious` (ou o mesmo nome da pasta local)
-3. Visibilidade: **Private** (obrigatorio — ha tokens em `data/`)
+3. Visibilidade: **Public** (tokens ficam fora do git — ver [PUBLIC_REPO.md](PUBLIC_REPO.md))
 4. Nao marque README/gitignore (ja existem localmente)
 
 ## 2. Primeiro push (terminal na pasta do projeto)

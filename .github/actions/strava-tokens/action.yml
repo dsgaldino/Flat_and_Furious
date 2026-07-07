@@ -1,0 +1,31 @@
+name: Strava tokens
+description: Restore athlete OAuth tokens from Actions cache or repository secret
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/cache@v4
+      id: tokens-cache
+      with:
+        path: data/tokens_athletes.csv
+        key: strava-tokens-v1-${{ hashFiles('data/tokens_athletes.csv.example') }}
+        restore-keys: strava-tokens-v1-
+
+    - name: Bootstrap tokens from secret if cache miss
+      shell: bash
+      env:
+        TOKENS_B64: ${{ env.TOKENS_ATHLETES_B64 }}
+      run: |
+        if [ -f data/tokens_athletes.csv ]; then
+          echo "Using cached or checked-out tokens file"
+          exit 0
+        fi
+        if [ -z "$TOKENS_B64" ]; then
+          echo "::error::No tokens file and TOKENS_ATHLETES_B64 secret is empty."
+          echo "Copy data/tokens_athletes.csv.example locally, register athletes, then:"
+          echo "  gh secret set TOKENS_ATHLETES_B64 --repo OWNER/REPO < tokens.b64"
+          exit 1
+        fi
+        mkdir -p data
+        echo "$TOKENS_B64" | base64 -d > data/tokens_athletes.csv
+        echo "Bootstrapped tokens from repository secret"

@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Restore athlete tokens
+        uses: ./.github/actions/strava-tokens
+        env:
+          TOKENS_ATHLETES_B64: ${{ secrets.TOKENS_ATHLETES_B64 }}
+
       - name: Resolve month
         id: month
         run: |
@@ -49,7 +54,8 @@ jobs:
         with:
           commit_message: "chore(ci): monthly report ${{ steps.month.outputs.value }}"
           file_pattern: |
-            data/*.csv
+            data/activities_all.csv
+            data/activities_formatted.csv
             reports/**
             site/public/**
 

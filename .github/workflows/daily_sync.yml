@@ -22,14 +22,21 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Restore athlete tokens
+        uses: ./.github/actions/strava-tokens
+        env:
+          TOKENS_ATHLETES_B64: ${{ secrets.TOKENS_ATHLETES_B64 }}
+
       - name: Sync Strava data
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: python -m flatfurious sync
 
-      - name: Commit data updates
+      - name: Commit activity data (not tokens)
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore(ci): daily Strava sync"
-          file_pattern: data/*.csv
+          file_pattern: |
+            data/activities_all.csv
+            data/activities_formatted.csv

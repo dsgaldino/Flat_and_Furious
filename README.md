@@ -1,82 +1,131 @@
 # Flat & Furious
 
-Pipeline automatizado para o grupo de ciclismo: sincroniza atividades do Strava, gera resumo mensal, site estatico e texto para WhatsApp.
+[![Daily Strava sync](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/daily_sync.yml/badge.svg)](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/daily_sync.yml)
+[![Monthly report](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/monthly_report.yml/badge.svg)](https://github.com/dsgaldino/Flat_and_Furious/actions/workflows/monthly_report.yml)
+[![GitHub Pages](https://img.shields.io/badge/demo-live-8A2BE2?style=flat-square)](https://dsgaldino.github.io/Flat_and_Furious/)
 
-**Documentacao da estrutura de pastas:** [docs/ESTRUTURA_DO_PROJETO.md](docs/ESTRUTURA_DO_PROJETO.md)  
-**Conectar ao GitHub:** [docs/GITHUB.md](docs/GITHUB.md)
+**End-to-end automation for a cycling group:** Strava OAuth → daily activity sync → monthly rankings → static site → WhatsApp-ready reports.
 
-## Comandos
+Built as a production-style Python pipeline with **GitHub Actions**, **GitHub Pages**, and optional **Cloudflare Workers** for Telegram onboarding.
+
+| | |
+|---|---|
+| **Live site** | [dsgaldino.github.io/Flat_and_Furious](https://dsgaldino.github.io/Flat_and_Furious/) |
+| **Stack** | Python 3.11 · pandas · Strava API · GitHub Actions · GitHub Pages |
+| **Author** | [Diego Galdino](https://github.com/dsgaldino) |
+
+---
+
+## What it does
+
+1. **OAuth onboarding** — athletes authorise Strava; tokens stored securely (never in git)
+2. **Daily sync** — refresh tokens, pull new rides, normalise CSV datasets
+3. **Monthly report** — rankings, stats, infographic, WhatsApp text
+4. **Static site** — auto-deployed to GitHub Pages after each report
+5. **Telegram bot** (optional) — Cloudflare Worker triggers athlete registration
+
+```
+Strava API ──► flatfurious (Python) ──► CSV + reports ──► GitHub Pages
+                     ▲
+              GitHub Actions (cron)
+```
+
+---
+
+## Quick start (local)
 
 ```bash
+git clone https://github.com/dsgaldino/Flat_and_Furious.git
+cd Flat_and_Furious
 pip install -r requirements.txt
-cp .env.example .env   # preencher CLIENT_ID e CLIENT_SECRET
+cp .env.example .env          # add CLIENT_ID + CLIENT_SECRET from Strava
+cp data/tokens_athletes.csv.example data/tokens_athletes.csv
 
 python -m flatfurious sync
-python -m flatfurious auth --code "URL_OU_CODE_STRAVA"
 python -m flatfurious report --month 2025-08 --build-site
 python -m flatfurious site-build
 ```
 
-## Configuracao local
+Register a new athlete:
 
-1. Copie [`.env.example`](.env.example) para `.env` na raiz do repo.
-2. Obtenha credenciais em https://www.strava.com/settings/api
-3. **Rotacione o Client Secret** se ele ja foi exposto em commits ou notebooks.
+```bash
+python -m flatfurious auth --code "STRAVA_REDIRECT_URL_WITH_CODE"
+```
 
-## GitHub (automacao online)
+---
 
-### Repositorio privado obrigatorio
+## Security model (public repo)
 
-O arquivo `data/tokens_athletes.csv` contem tokens de acesso. Use repositorio **privado**.
+| Asset | Where it lives |
+|-------|----------------|
+| `CLIENT_ID` / `CLIENT_SECRET` | `.env` locally · GitHub Actions **Secrets** |
+| Athlete OAuth tokens | `data/tokens_athletes.csv` locally · **Actions cache** + `TOKENS_ATHLETES_B64` secret |
+| Activity data | Committed CSVs (no tokens) |
+| Pending auth URLs | Local only (`pending_auth_urls.txt` is gitignored) |
 
-### Secrets (Settings > Secrets and variables > Actions)
+**Never commit** `.env`, `tokens_athletes.csv`, or OAuth redirect URLs.
 
-| Secret | Descricao |
-|--------|-----------|
+See [docs/PUBLIC_REPO.md](docs/PUBLIC_REPO.md) for the full public-repo checklist.
+
+---
+
+## GitHub Actions
+
+| Workflow | Schedule | Purpose |
+|----------|----------|---------|
+| `daily_sync.yml` | 06:00 UTC daily | Token refresh + activity collection |
+| `monthly_report.yml` | 08:00 UTC, 1st of month | Report, site build, WhatsApp artifacts |
+| `deploy_pages.yml` | On push to `site/public` | GitHub Pages deploy |
+| `auth_athlete.yml` | Manual / repository_dispatch | Register new Strava athlete |
+
+### Required secrets
+
+| Secret | Description |
+|--------|-------------|
 | `CLIENT_ID` | Strava API client ID |
 | `CLIENT_SECRET` | Strava API client secret |
+| `TOKENS_ATHLETES_B64` | Base64 of `tokens_athletes.csv` (bootstrap + cache fallback) |
 
-### Variables (opcional)
+Optional variable: `SITE_BASE_URL` (e.g. `https://dsgaldino.github.io/Flat_and_Furious`)
 
-| Variable | Descricao |
-|----------|-----------|
-| `SITE_BASE_URL` | Ex: `https://seuuser.github.io/Flat_and_Furious` (link no whatsapp.txt) |
+---
 
-### Workflows
-
-| Workflow | Quando |
-|----------|--------|
-| `daily_sync.yml` | Diario 06:00 UTC — refresh tokens + atividades |
-| `monthly_report.yml` | Dia 1, 08:00 UTC — relatorio + site + artefatos WhatsApp |
-| `deploy_pages.yml` | Deploy do site em `site/public` |
-| `auth_athlete.yml` | Manual — registrar novo membro |
-
-### GitHub Pages
-
-1. Settings > Pages > Source: **GitHub Actions**
-2. Apos o primeiro `monthly_report` ou `site-build`, o site publica em `site/public`
-
-## Onboarding de membros
-
-1. Envie ao atleta o link de autorizacao Strava (mesmo `redirect_uri` do app).
-2. Apos autorizar, ele envia a URL com `code=...`.
-3. Rode localmente `python -m flatfurious auth --code "..."` **ou** dispare o workflow **Register Strava athlete** no GitHub Actions.
-
-## Estrutura
+## Project layout
 
 ```
-data/
-  tokens_athletes.csv
-  activities_all.csv
-  activities_formatted.csv
-reports/YYYY/MM/
-  summary.json
-  whatsapp.txt
-  infographic.png
-site/public/          # site gerado (GitHub Pages)
-flatfurious/          # codigo do pipeline
+flatfurious/           Python package (CLI, Strava, reports, site builder)
+data/                  Activity CSVs (+ local tokens file, gitignored)
+reports/YYYY/MM/       Monthly summary, infographic, whatsapp.txt
+site/public/           Generated static site (GitHub Pages)
+.github/workflows/     CI/CD automation
+docs/                  Architecture, runbook, onboarding
+workers/               Cloudflare Telegram bot (optional)
 ```
 
-## WhatsApp
+Deep dive: [docs/ESTRUTURA_DO_PROJETO.md](docs/ESTRUTURA_DO_PROJETO.md)
 
-O arquivo `reports/YYYY/MM/whatsapp.txt` e gerado automaticamente. Copie o texto e anexe `infographic.png` no grupo. Envio via API fica para fase futura.
+---
+
+## CLI
+
+```bash
+python -m flatfurious sync                              # refresh + collect
+python -m flatfurious auth --code "URL_OR_CODE"         # register athlete
+python -m flatfurious report --month YYYY-MM --build-site
+python -m flatfurious site-build
+```
+
+---
+
+## Docs
+
+- [PUBLIC_REPO.md](docs/PUBLIC_REPO.md) — making the repo public safely
+- [GITHUB.md](docs/GITHUB.md) — secrets, Pages, first deploy
+- [RUNBOOK.md](docs/RUNBOOK.md) — operations and troubleshooting
+- [ONBOARDING.md](ONBOARDING.md) — new member flow
+
+---
+
+## Licence
+
+Personal / group project. Strava API usage subject to [Strava API Agreement](https://www.strava.com/legal/api).

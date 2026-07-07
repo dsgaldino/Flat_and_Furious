@@ -2,6 +2,8 @@
 .env
 Notebooks/.env
 *.env.local
+data/tokens_athletes.csv
+data/pending_auth_urls.txt
 
 # Python
 __pycache__/

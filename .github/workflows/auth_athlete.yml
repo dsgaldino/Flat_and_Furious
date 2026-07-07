@@ -11,7 +11,7 @@ on:
     types: [strava_auth]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   auth:
@@ -26,6 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Restore athlete tokens
+        uses: ./.github/actions/strava-tokens
+        env:
+          TOKENS_ATHLETES_B64: ${{ secrets.TOKENS_ATHLETES_B64 }}
 
       - name: Register athlete token
         env:
@@ -42,10 +47,3 @@ jobs:
             exit 1
           fi
           python -m flatfurious auth --code "$CODE"
-
-      - name: Commit tokens
-        if: success()
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(ci): register Strava athlete token"
-          file_pattern: data/tokens_athletes.csv

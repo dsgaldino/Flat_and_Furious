@@ -1,0 +1,4 @@
+# One-time Strava OAuth redirect URLs from athletes (codes expire in minutes).
+# Copy to pending_auth_urls.txt locally — never commit real URLs.
+#
+# python -m flatfurious auth --code "FULL_REDIRECT_URL"
